@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime News - AnimeCrunch</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <style>
+        .news-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/placeholder.svg?height=600&width=1200');
+            height: 400px;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .news-card {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-image {
+            height: 200px;
+            background-color: #3a3a3a;
+            background-image: url('/placeholder.svg?height=200&width=350');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .news-info {
+            padding: 20px;
+        }
+        
+        .news-info h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        
+        .news-info p {
+            color: #cccccc;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .news-category {
+            display: inline-block;
+            background-color: #f47521;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .featured-news {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        
+        .featured-news .news-image {
+            height: 100%;
+        }
+        
+        .featured-news .news-info {
+            padding: 30px;
+        }
+        
+        .featured-news .news-info h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .featured-news .news-info p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .news-filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background-color: #2b2b2b;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #f47521;
+            color: white;
+        }
+        
+        @media (max-width: 1024px) {
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .featured-news {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-news {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-news .news-image {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .featured-news {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AnimeCrunch</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Browse</a></li>
+                    <li><a href="manga.html">Manga</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="#" class="search-icon">🔍</a>
+                <a href="#" class="btn btn-secondary">Log In</a>
+                <a href="#" class="btn btn-primary">Try Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Hero Section -->
+    <section class="hero news-hero">
+        <div class="hero-content">
+            <h2>ANIME NEWS</h2>
+            <p class="subtitle">Stay up to date with the latest in anime</p>
+            <p class="description">Breaking news, interviews, announcements, and more from the world of anime and manga.</p>
+        </div>
+    </section>
+
+    <!-- News Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="news-filters">
+                <a href="#" class="filter-btn active">All News</a>
+                <a href="#" class="filter-btn">Announcements</a>
+                <a href="#" class="filter-btn">Interviews</a>
+                <a href="#" class="filter-btn">Reviews</a>
+                <a href="#" class="filter-btn">Events</a>
+                <a href="#" class="filter-btn">Industry</a>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card featured-news">
+                    <div class="news-image"></div>
+                    <div class="news-info">
+                        <span class="news-category">Breaking</span>
+                        <h4>Demon Slayer Season 4 Announced for 2024 Release</h4>
+                        <p>Ufotable has officially announced that Demon Slayer: Kimetsu no Yaiba will return for its fourth season in 2024, adapting the Hashira Training Arc.</p>
+                        <p>The announcement came during a special event in Tokyo where the studio also revealed a new key visual featuring Tanjiro and the Hashira.</p>
+                        <div class="news-meta">
+                            <span>2 hours ago</span>
+                            <span>By AnimeCrunch Staff</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image"></div>
+                    <div class="news-info">
+                        <span class="news-category">Interview</span>
+                        <h4>One Piece Creator Eiichiro Oda Discusses Series' Future</h4>
+                        <p>In an exclusive interview, Oda shares insights about the final saga...</p>
+                        <div class="news-meta">
+                            <span>Yesterday</span>
+                            <span>By John Smith</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image"></div>
+                    <div class="news-info">
+                        <span class="news-category">Announcement</span>
+                        <h4>Jujutsu Kaisen Movie Confirmed for 2025</h4>
+                        <p>MAPPA announces a new film project following the success of season 2...</p>
+                        <div class="news-meta">
+                            <span>2 days ago</span>
+                            <span>By Sarah Johnson</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image"></div>
+                    <div class="news-info">
+                        <span class="news-category">Event</span>
+                        <h4>Anime Expo 2023: All the Major Announcements</h4>
+                        <p>Recap of the biggest reveals and surprises from this year's event...</p>
+                        <div class="news-meta">
+                            <span>3 days ago</span>
+                            <span>By Mike Chen</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image"></div>
+                    <div class="news-info">
+                        <span class="news-category">Industry</span>
+                        <h4>Studio Ghibli Opens New Animation Museum</h4>
+                        <p>The legendary studio unveils a new museum dedicated to the art of animation...</p>
+                        <div class="news-meta">
+                            <span>4 days ago</span>
+                            <span>By Emma Wilson</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image"></div>
+                    <div class="news-info">
+                        <span class="news-category">Review</span>
+                        <h4>Chainsaw Man Season 1: The Complete Review</h4>
+                        <p>Our in-depth analysis of MAPPA's adaptation of the popular manga...</p>
+                        <div class="news-meta">
+                            <span>5 days ago</span>
+                            <span>By David Lee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="premium-banner" style="background-image: linear-gradient(to right, #2b2b2b, #3a3a3a);">
+        <div class="container">
+            <div class="premium-content">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for weekly anime news and updates!</p>
+                <div style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px;">
+                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 12px; border-radius: 4px; border: none; background: #fff;">
+                    <button class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Browse</a></li>
+                        <li><a href="manga.html">Manga</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="store.html">Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Watchlist</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IG</a>
+                        <a href="#">YT</a>
+                    </div>
+                    <p>Download the App</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">App Store</a>
+                        <a href="#" class="app-button">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AnimeCrunch. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

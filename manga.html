@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga - AnimeCrunch</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <style>
+        .manga-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/placeholder.svg?height=600&width=1200');
+            height: 400px;
+        }
+        
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+        
+        .manga-card {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .manga-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .manga-image {
+            height: 250px;
+            background-color: #3a3a3a;
+            background-image: url('/placeholder.svg?height=250&width=180');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .manga-info {
+            padding: 15px;
+        }
+        
+        .manga-info h4 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .manga-info p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+        
+        .manga-filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background-color: #2b2b2b;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #f47521;
+            color: white;
+        }
+        
+        @media (max-width: 1024px) {
+            .manga-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .manga-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .manga-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .manga-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .manga-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AnimeCrunch</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Browse</a></li>
+                    <li><a href="manga.html" class="active">Manga</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="#" class="search-icon">🔍</a>
+                <a href="#" class="btn btn-secondary">Log In</a>
+                <a href="#" class="btn btn-primary">Try Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Manga Hero Section -->
+    <section class="hero manga-hero">
+        <div class="hero-content">
+            <h2>MANGA</h2>
+            <p class="subtitle">Read the latest manga chapters</p>
+            <p class="description">Discover thousands of manga titles from action-packed shonen to heartwarming romance.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Browse All</a>
+                <a href="#" class="btn btn-secondary">My Library</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manga Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Popular Manga</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="manga-filters">
+                <a href="#" class="filter-btn active">All</a>
+                <a href="#" class="filter-btn">Action</a>
+                <a href="#" class="filter-btn">Romance</a>
+                <a href="#" class="filter-btn">Fantasy</a>
+                <a href="#" class="filter-btn">Horror</a>
+                <a href="#" class="filter-btn">Slice of Life</a>
+            </div>
+            
+            <div class="manga-grid">
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>One Piece</h4>
+                        <p>Chapter 1089</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>My Hero Academia</h4>
+                        <p>Chapter 392</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Jujutsu Kaisen</h4>
+                        <p>Chapter 236</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Chainsaw Man</h4>
+                        <p>Chapter 145</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Spy x Family</h4>
+                        <p>Chapter 78</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Demon Slayer</h4>
+                        <p>Complete</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Releases Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>New Releases</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="manga-grid">
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Boruto</h4>
+                        <p>New Chapter</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Dragon Ball Super</h4>
+                        <p>New Chapter</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>One Punch Man</h4>
+                        <p>New Chapter</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Tokyo Revengers</h4>
+                        <p>New Chapter</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Black Clover</h4>
+                        <p>New Chapter</p>
+                    </div>
+                </div>
+                <div class="manga-card">
+                    <div class="manga-image"></div>
+                    <div class="manga-info">
+                        <h4>Kaiju No. 8</h4>
+                        <p>New Chapter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Banner -->
+    <section class="premium-banner">
+        <div class="container">
+            <div class="premium-content">
+                <h3>AnimeCrunch Manga Premium</h3>
+                <p>Unlimited manga reading, early access to new chapters, and more!</p>
+                <a href="#" class="btn btn-primary">Try Free for 14 Days</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Browse</a></li>
+                        <li><a href="manga.html">Manga</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="store.html">Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Watchlist</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IG</a>
+                        <a href="#">YT</a>
+                    </div>
+                    <p>Download the App</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">App Store</a>
+                        <a href="#" class="app-button">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AnimeCrunch. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

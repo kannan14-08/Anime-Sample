@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Games - AnimeCrunch</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <style>
+        .games-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/placeholder.svg?height=600&width=1200');
+            height: 400px;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .game-card {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .game-image {
+            height: 200px;
+            background-color: #3a3a3a;
+            background-image: url('/placeholder.svg?height=200&width=350');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .game-info {
+            padding: 20px;
+        }
+        
+        .game-info h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .game-info p {
+            color: #cccccc;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .game-platform {
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .game-rating {
+            display: flex;
+            align-items: center;
+            color: #f47521;
+            font-weight: bold;
+        }
+        
+        .featured-game {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0;
+        }
+        
+        .featured-game .game-image {
+            height: 100%;
+        }
+        
+        .featured-game .game-info {
+            padding: 30px;
+        }
+        
+        .featured-game .game-info h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .featured-game .game-info p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .game-btn {
+            display: inline-block;
+            background-color: #f47521;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .game-btn:hover {
+            background-color: #e06a1c;
+        }
+        
+        .game-filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background-color: #2b2b2b;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #f47521;
+            color: white;
+        }
+        
+        @media (max-width: 1024px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .featured-game {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-game {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-game .game-image {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .featured-game {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AnimeCrunch</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Browse</a></li>
+                    <li><a href="manga.html">Manga</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="games.html" class="active">Games</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="#" class="search-icon">🔍</a>
+                <a href="#" class="btn btn-secondary">Log In</a>
+                <a href="#" class="btn btn-primary">Try Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Games Hero Section -->
+    <section class="hero games-hero">
+        <div class="hero-content">
+            <h2>ANIME GAMES</h2>
+            <p class="subtitle">Play your favorite anime games</p>
+            <p class="description">Discover the latest and greatest games based on your favorite anime series.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Browse All</a>
+                <a href="#" class="btn btn-secondary">My Library</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="game-filters">
+                <a href="#" class="filter-btn active">All Games</a>
+                <a href="#" class="filter-btn">Action</a>
+                <a href="#" class="filter-btn">RPG</a>
+                <a href="#" class="filter-btn">Fighting</a>
+                <a href="#" class="filter-btn">Adventure</a>
+                <a href="#" class="filter-btn">Mobile</a>
+            </div>
+            
+            <div class="games-grid">
+                <div class="game-card featured-game">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>Demon Slayer: The Hinokami Chronicles</h4>
+                        <p>Become the blade that destroys demons! Take control of Tanjiro Kamado and other characters from the hit anime in this stunning arena fighter.</p>
+                        <p>Experience the story of Demon Slayer from Tanjiro's point of view, with beautiful graphics that bring the world to life.</p>
+                        <div class="game-meta">
+                            <span class="game-platform">PS5, Xbox Series X, PC</span>
+                            <span class="game-rating">4.8/5 ★★★★★</span>
+                        </div>
+                        <a href="#" class="game-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>Dragon Ball Z: Kakarot</h4>
+                        <p>Relive the story of Goku in this action RPG...</p>
+                        <div class="game-meta">
+                            <span class="game-platform">PS5, Xbox, PC</span>
+                            <span class="game-rating">4.5/5</span>
+                        </div>
+                        <a href="#" class="game-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>Naruto to Boruto: Shinobi Striker</h4>
+                        <p>Team-based online ninja battles...</p>
+                        <div class="game-meta">
+                            <span class="game-platform">PS4, Xbox, PC</span>
+                            <span class="game-rating">4.2/5</span>
+                        </div>
+                        <a href="#" class="game-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>One Piece: Pirate Warriors 4</h4>
+                        <p>Musou-style action with the Straw Hat crew...</p>
+                        <div class="game-meta">
+                            <span class="game-platform">Switch, PS4, Xbox, PC</span>
+                            <span class="game-rating">4.3/5</span>
+                        </div>
+                        <a href="#" class="game-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>My Hero One's Justice 2</h4>
+                        <p>3D arena fighter featuring UA students...</p>
+                        <div class="game-meta">
+                            <span class="game-platform">Switch, PS4, Xbox, PC</span>
+                            <span class="game-rating">4.0/5</span>
+                        </div>
+                        <a href="#" class="game-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>Attack on Titan 2</h4>
+                        <p>Swing through the air and battle Titans...</p>
+                        <div class="game-meta">
+                            <span class="game-platform">Switch, PS4, Xbox, PC</span>
+                            <span class="game-rating">4.4/5</span>
+                        </div>
+                        <a href="#" class="game-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Games Section -->
+    <section class="content-section" style="background-color: #23252b;">
+        <div class="container">
+            <div class="section-header">
+                <h3>Mobile Games</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>Dragon Ball Legends</h4>
+                        <p>Card-based fighting game with stunning 3D visuals...</p>
+                        <div class="game-meta">
+                            <span class="game-platform">iOS, Android</span>
+                            <span class="game-rating">4.6/5</span>
+                        </div>
+                        <a href="#" class="game-btn">Download</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>Bleach: Brave Souls</h4>
+                        <p>Action RPG with your favorite Soul Reapers...</p>
+                        <div class="game-meta">
+                            <span class="game-platform">iOS, Android</span>
+                            <span class="game-rating">4.3/5</span>
+                        </div>
+                        <a href="#" class="game-btn">Download</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image"></div>
+                    <div class="game-info">
+                        <h4>One Piece Treasure Cruise</h4>
+                        <p>Turn-based RPG with tap controls...</p>
+                        <div class="game-meta">
+                            <span class="game-platform">iOS, Android</span>
+                            <span class="game-rating">4.5/5</span>
+                        </div>
+                        <a href="#" class="game-btn">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="premium-banner" style="background-image: linear-gradient(to right, #2b2b2b, #3a3a3a);">
+        <div class="container">
+            <div class="premium-content">
+                <h3>Coming Soon</h3>
+                <p>Sign up to get notified when new anime games are released!</p>
+                <div style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px;">
+                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 12px; border-radius: 4px; border: none; background: #fff;">
+                    <button class="btn btn-primary" style="white-space: nowrap;">Notify Me</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Browse</a></li>
+                        <li><a href="manga.html">Manga</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="store.html">Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Watchlist</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IG</a>
+                        <a href="#">YT</a>
+                    </div>
+                    <p>Download the App</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">App Store</a>
+                        <a href="#" class="app-button">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AnimeCrunch. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

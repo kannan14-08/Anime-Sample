@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Store - AnimeCrunch</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <style>
+        .store-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/placeholder.svg?height=600&width=1200');
+            height: 400px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #3a3a3a;
+            background-image: url('/placeholder.svg?height=200&width=200');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-info h4 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .product-price {
+            color: #f47521;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .product-btn {
+            display: block;
+            background-color: #f47521;
+            color: white;
+            padding: 8px 0;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .product-btn:hover {
+            background-color: #e06a1c;
+        }
+        
+        .featured-products {
+            margin-bottom: 50px;
+        }
+        
+        .store-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .category-card {
+            position: relative;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #3a3a3a;
+            background-image: url('/placeholder.svg?height=150&width=350');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        
+        .category-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .store-filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background-color: #2b2b2b;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #f47521;
+            color: white;
+        }
+        
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .store-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .store-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AnimeCrunch</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Browse</a></li>
+                    <li><a href="manga.html">Manga</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="store.html" class="active">Store</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="#" class="search-icon">🔍</a>
+                <a href="#" class="btn btn-secondary">Log In</a>
+                <a href="#" class="btn btn-primary">Try Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Store Hero Section -->
+    <section class="hero store-hero">
+        <div class="hero-content">
+            <h2>ANIME STORE</h2>
+            <p class="subtitle">Official Merchandise & Collectibles</p>
+            <p class="description">Shop exclusive figures, apparel, manga, and more from your favorite anime series.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Shop Now</a>
+                <a href="#" class="btn btn-secondary">View Cart</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Categories -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Shop by Category</h3>
+            </div>
+            
+            <div class="store-categories">
+                <a href="#" class="category-card">
+                    <div class="category-overlay">
+                        <span class="category-name">Figures & Collectibles</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-overlay">
+                        <span class="category-name">Apparel</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-overlay">
+                        <span class="category-name">Manga & Books</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-overlay">
+                        <span class="category-name">Home & Lifestyle</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-overlay">
+                        <span class="category-name">Accessories</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-overlay">
+                        <span class="category-name">Limited Editions</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="content-section featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h3>Featured Products</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="store-filters">
+                <a href="#" class="filter-btn active">All</a>
+                <a href="#" class="filter-btn">Demon Slayer</a>
+                <a href="#" class="filter-btn">My Hero Academia</a>
+                <a href="#" class="filter-btn">One Piece</a>
+                <a href="#" class="filter-btn">Jujutsu Kaisen</a>
+                <a href="#" class="filter-btn">Attack on Titan</a>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Tanjiro Kamado Figure</h4>
+                        <p class="product-price">$59.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>My Hero Academia T-Shirt</h4>
+                        <p class="product-price">$24.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>One Piece Manga Box Set</h4>
+                        <p class="product-price">$149.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Gojo Satoru Figure</h4>
+                        <p class="product-price">$64.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Attack on Titan Hoodie</h4>
+                        <p class="product-price">$49.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Demon Slayer Poster Set</h4>
+                        <p class="product-price">$19.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Chainsaw Man Keychain</h4>
+                        <p class="product-price">$12.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Naruto Shippuden Mug</h4>
+                        <p class="product-price">$16.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="content-section" style="background-color: #23252b;">
+        <div class="container">
+            <div class="section-header">
+                <h3>New Arrivals</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Luffy Gear 5 Figure</h4>
+                        <p class="product-price">$79.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Jujutsu Kaisen Backpack</h4>
+                        <p class="product-price">$39.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Spy x Family Plush Set</h4>
+                        <p class="product-price">$34.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h4>Bleach TYBW Wall Scroll</h4>
+                        <p class="product-price">$29.99</p>
+                        <a href="#" class="product-btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="premium-banner">
+        <div class="container">
+            <div class="premium-content">
+                <h3>Join Our Mailing List</h3>
+                <p>Subscribe for exclusive deals, new product alerts, and 10% off your first order!</p>
+                <div style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px;">
+                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 12px; border-radius: 4px; border: none; background: #fff;">
+                    <button class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Browse</a></li>
+                        <li><a href="manga.html">Manga</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="store.html">Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Watchlist</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IG</a>
+                        <a href="#">YT</a>
+                    </div>
+                    <p>Download the App</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">App Store</a>
+                        <a href="#" class="app-button">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AnimeCrunch. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
