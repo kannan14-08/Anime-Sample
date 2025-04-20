@@ -5,33 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnimeCrunch - Anime Streaming</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&display=swap">
 </head>
 <body>
- <!-- Header Section -->
-<header>
-  <div class="container">
-      <div class="logo">
-          <h1>AnimeCrunch</h1>
-      </div>
-      <nav>
-          <ul>
-              <li><a href="index.html" class="active">Browse</a></li>
-              <li><a href="manga.html">Manga</a></li>
-              <li><a href="news.html">News</a></li>
-              <li><a href="games.html">Games</a></li>
-              <li><a href="store.html">Store</a></li>
-          </ul>
-      </nav>
-      <div class="header-buttons">
-          <a href="#" class="search-icon">🔍</a>
-          <a href="#" class="btn btn-secondary">Log In</a>
-          <a href="#" class="btn btn-primary">Try Free</a>
-      </div>
-  </div>
-</header>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🍥</div>
+                <h1>AnimeCrunch</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Browse</a></li>
+                    <li><a href="manga.html">Manga</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="#" class="search-icon">🔍</a>
+                <a href="#" class="btn btn-secondary">Log In</a>
+                <a href="#" class="btn btn-primary">Try Free</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
         <div class="hero-content">
             <h2>DEMON SLAYER</h2>
             <p class="subtitle">Entertainment District Arc</p>
@@ -39,6 +44,29 @@
             <div class="hero-buttons">
                 <a href="#" class="btn btn-primary">Watch Now</a>
                 <a href="#" class="btn btn-secondary">Add to Watchlist</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Player Section -->
+    <section class="video-player-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Featured Episode</h3>
+                <a href="#" class="view-all">More Episodes</a>
+            </div>
+            <div class="video-container">
+                <video class="video-player" poster="/placeholder.svg?height=500&width=900" controls>
+                    <source src="#" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <div class="video-title">Demon Slayer S2E10 - Never Give Up</div>
+                    <div class="video-buttons">
+                        <button class="video-btn">Next Episode</button>
+                        <button class="video-btn">Add to List</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -170,57 +198,129 @@
             </div>
         </div>
     </section>
- <!-- Footer -->
-<footer>
-  <div class="container">
-      <div class="footer-grid">
-          <div class="footer-column">
-              <h4>Navigation</h4>
-              <ul>
-                  <li><a href="index.html">Browse</a></li>
-                  <li><a href="manga.html">Manga</a></li>
-                  <li><a href="news.html">News</a></li>
-                  <li><a href="games.html">Games</a></li>
-                  <li><a href="store.html">Store</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Account</h4>
-              <ul>
-                  <li><a href="#">My Account</a></li>
-                  <li><a href="#">Watchlist</a></li>
-                  <li><a href="#">History</a></li>
-                  <li><a href="#">Premium</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Help</h4>
-              <ul>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Connect</h4>
-              <div class="social-icons">
-                  <a href="#">FB</a>
-                  <a href="#">TW</a>
-                  <a href="#">IG</a>
-                  <a href="#">YT</a>
-              </div>
-              <p>Download the App</p>
-              <div class="app-buttons">
-                  <a href="#" class="app-button">App Store</a>
-                  <a href="#" class="app-button">Google Play</a>
-              </div>
-          </div>
-      </div>
-      <div class="footer-bottom">
-          <p>&copy; 2023 AnimeCrunch. All Rights Reserved.</p>
-      </div>
-  </div>
-</footer>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Browse</a></li>
+                        <li><a href="manga.html">Manga</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="store.html">Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Watchlist</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IG</a>
+                        <a href="#">YT</a>
+                    </div>
+                    <p>Download the App</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">App Store</a>
+                        <a href="#" class="app-button">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AnimeCrunch. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Add hover effect to anime cards
+        const animeCards = document.querySelectorAll('.anime-card');
+        animeCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+                card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+        });
+        
+        // Video player controls
+        const videoPlayer = document.querySelector('.video-player');
+        const nextEpisodeBtn = document.querySelector('.video-btn:first-child');
+        
+        if (nextEpisodeBtn) {
+            nextEpisodeBtn.addEventListener('click', () => {
+                alert('Loading next episode...');
+                // In a real implementation, this would load the next episode
+            });
+        }
+        
+        // Create random floating elements in the hero section
+        function createFloatingElements() {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            
+            for (let i = 0; i < 5; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random size
+                const size = Math.random() * 50 + 30;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Random position
+                element.style.top = `${Math.random() * 80 + 10}%`;
+                element.style.left = `${Math.random() * 80 + 10}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 5 + 5;
+                element.style.animation = `float ${duration}s infinite ease-in-out`;
+                
+                // Random delay
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Random opacity
+                element.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                // Random background
+                const hue = Math.random() * 30 + 20;
+                element.style.backgroundColor = `hsla(${hue}, 80%, 50%, 0.3)`;
+                
+                // Random border radius for shape variation
+                const radius = Math.random() * 50 + 50;
+                element.style.borderRadius = `${radius}% ${100-radius}% ${radius}% ${100-radius}%`;
+                
+                hero.appendChild(element);
+            }
+        }
+        
+        // Call the function when the page loads
+        window.addEventListener('load', createFloatingElements);
+    </script>
 </body>
 </html>
