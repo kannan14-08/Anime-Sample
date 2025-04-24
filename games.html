@@ -3,169 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Games - AnimeCrunch</title>
+    <title>AnimeCrunch - Anime Games</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
-    <style>
-        .games-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/placeholder.svg?height=600&width=1200');
-            height: 400px;
-        }
-        
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .game-card {
-            background-color: #2b2b2b;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .game-image {
-            height: 200px;
-            background-color: #3a3a3a;
-            background-image: url('/placeholder.svg?height=200&width=350');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .game-info {
-            padding: 20px;
-        }
-        
-        .game-info h4 {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        
-        .game-info p {
-            color: #cccccc;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        
-        .game-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .game-platform {
-            color: #999;
-            font-size: 12px;
-        }
-        
-        .game-rating {
-            display: flex;
-            align-items: center;
-            color: #f47521;
-            font-weight: bold;
-        }
-        
-        .featured-game {
-            grid-column: span 3;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 0;
-        }
-        
-        .featured-game .game-image {
-            height: 100%;
-        }
-        
-        .featured-game .game-info {
-            padding: 30px;
-        }
-        
-        .featured-game .game-info h4 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .featured-game .game-info p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        
-        .game-btn {
-            display: inline-block;
-            background-color: #f47521;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-        
-        .game-btn:hover {
-            background-color: #e06a1c;
-        }
-        
-        .game-filters {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background-color: #2b2b2b;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background-color: #f47521;
-            color: white;
-        }
-        
-        @media (max-width: 1024px) {
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .featured-game {
-                grid-column: span 2;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .featured-game {
-                grid-template-columns: 1fr;
-            }
-            
-            .featured-game .game-image {
-                height: 250px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .games-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .featured-game {
-                grid-column: span 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&display=swap">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="container">
             <div class="logo">
+                <div class="logo-icon">🍥</div>
                 <h1>AnimeCrunch</h1>
             </div>
             <nav>
@@ -178,181 +25,348 @@
                 </ul>
             </nav>
             <div class="header-buttons">
-                <a href="#" class="search-icon">🔍</a>
-                <a href="#" class="btn btn-secondary">Log In</a>
-                <a href="#" class="btn btn-primary">Try Free</a>
+                <div class="search-container">
+                    <div class="search-icon" id="search-toggle">🔍</div>
+                    <div class="search-bar" id="search-bar">
+                        <input type="text" class="search-input" placeholder="Search games, genres, platforms...">
+                        <div class="search-results">
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Demon Slayer: Hinokami Chronicles</h4>
+                                    <p>Game • Action</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Dragon Ball FighterZ</h4>
+                                    <p>Game • Fighting</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Naruto Ultimate Ninja Storm 4</h4>
+                                    <p>Game • Fighting</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-secondary" id="login-btn">Log In</a>
+                <a href="#" class="btn btn-primary" id="signup-btn">Try Free</a>
             </div>
         </div>
     </header>
 
     <!-- Games Hero Section -->
     <section class="hero games-hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
         <div class="hero-content">
             <h2>ANIME GAMES</h2>
-            <p class="subtitle">Play your favorite anime games</p>
-            <p class="description">Discover the latest and greatest games based on your favorite anime series.</p>
+            <p class="subtitle">Play Your Favorite Series</p>
+            <p class="description">Discover the latest and greatest games based on your favorite anime series across all platforms.</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Browse All</a>
-                <a href="#" class="btn btn-secondary">My Library</a>
+                <a href="#" class="btn btn-primary">Browse Games</a>
+                <a href="#" class="btn btn-secondary">New Releases</a>
             </div>
         </div>
     </section>
 
-    <!-- Games Content -->
+    <!-- Featured Game -->
     <section class="content-section">
         <div class="container">
-            <div class="game-filters">
-                <a href="#" class="filter-btn active">All Games</a>
-                <a href="#" class="filter-btn">Action</a>
-                <a href="#" class="filter-btn">RPG</a>
-                <a href="#" class="filter-btn">Fighting</a>
-                <a href="#" class="filter-btn">Adventure</a>
-                <a href="#" class="filter-btn">Mobile</a>
+            <div class="section-header">
+                <h3>Featured Game</h3>
+            </div>
+            
+            <div class="featured-game">
+                <div class="game-image" style="background-image: url('/placeholder.svg?height=300&width=600')"></div>
+                <div class="game-info">
+                    <div class="game-badge">New Release</div>
+                    <h2>Demon Slayer: Hinokami Chronicles</h2>
+                    <div class="rating">
+                        <span class="star" style="--i:1">★</span>
+                        <span class="star" style="--i:2">★</span>
+                        <span class="star" style="--i:3">★</span>
+                        <span class="star" style="--i:4">★</span>
+                        <span class="star" style="--i:5">★</span>
+                    </div>
+                    <p class="game-description">Become the blade that destroys demons! In Demon Slayer: Hinokami Chronicles, follow Tanjiro through the story from the Demon Slayer anime as he sets out to avenge his family and cure his sister.</p>
+                    <div class="game-platforms">
+                        <span class="game-platform">PS5</span>
+                        <span class="game-platform">PS4</span>
+                        <span class="game-platform">Xbox Series X</span>
+                        <span class="game-platform">Xbox One</span>
+                        <span class="game-platform">PC</span>
+                        <span class="game-platform">Switch</span>
+                    </div>
+                    <div class="game-cta">
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                        <a href="#" class="btn btn-secondary">Watch Trailer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Games -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Popular Games</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Action</button>
+                    <button class="filter-btn">Fighting</button>
+                    <button class="filter-btn">RPG</button>
+                    <button class="filter-btn">Adventure</button>
+                </div>
             </div>
             
             <div class="games-grid">
-                <div class="game-card featured-game">
-                    <div class="game-image"></div>
+                <div class="game-card">
+                    <div class="game-badge">Best Seller</div>
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
                     <div class="game-info">
-                        <h4>Demon Slayer: The Hinokami Chronicles</h4>
-                        <p>Become the blade that destroys demons! Take control of Tanjiro Kamado and other characters from the hit anime in this stunning arena fighter.</p>
-                        <p>Experience the story of Demon Slayer from Tanjiro's point of view, with beautiful graphics that bring the world to life.</p>
-                        <div class="game-meta">
-                            <span class="game-platform">PS5, Xbox Series X, PC</span>
-                            <span class="game-rating">4.8/5 ★★★★★</span>
+                        <h4>Dragon Ball FighterZ</h4>
+                        <p>Fighting • Multiplayer</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
                         </div>
-                        <a href="#" class="game-btn">Learn More</a>
+                        <div class="game-platforms">
+                            <span class="game-platform">PS5</span>
+                            <span class="game-platform">Xbox</span>
+                            <span class="game-platform">PC</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Buy Now</button>
+                            <button class="action-btn">Add to Wishlist</button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="game-card">
-                    <div class="game-image"></div>
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
                     <div class="game-info">
-                        <h4>Dragon Ball Z: Kakarot</h4>
-                        <p>Relive the story of Goku in this action RPG...</p>
-                        <div class="game-meta">
-                            <span class="game-platform">PS5, Xbox, PC</span>
-                            <span class="game-rating">4.5/5</span>
+                        <h4>Naruto Ultimate Ninja Storm 4</h4>
+                        <p>Fighting • Story</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
                         </div>
-                        <a href="#" class="game-btn">Learn More</a>
+                        <div class="game-platforms">
+                            <span class="game-platform">PS4</span>
+                            <span class="game-platform">Xbox</span>
+                            <span class="game-platform">PC</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Buy Now</button>
+                            <button class="action-btn">Add to Wishlist</button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="game-card">
-                    <div class="game-image"></div>
-                    <div class="game-info">
-                        <h4>Naruto to Boruto: Shinobi Striker</h4>
-                        <p>Team-based online ninja battles...</p>
-                        <div class="game-meta">
-                            <span class="game-platform">PS4, Xbox, PC</span>
-                            <span class="game-rating">4.2/5</span>
-                        </div>
-                        <a href="#" class="game-btn">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="game-card">
-                    <div class="game-image"></div>
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
                     <div class="game-info">
                         <h4>One Piece: Pirate Warriors 4</h4>
-                        <p>Musou-style action with the Straw Hat crew...</p>
-                        <div class="game-meta">
-                            <span class="game-platform">Switch, PS4, Xbox, PC</span>
-                            <span class="game-rating">4.3/5</span>
+                        <p>Action • Adventure</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
                         </div>
-                        <a href="#" class="game-btn">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="game-card">
-                    <div class="game-image"></div>
-                    <div class="game-info">
-                        <h4>My Hero One's Justice 2</h4>
-                        <p>3D arena fighter featuring UA students...</p>
-                        <div class="game-meta">
-                            <span class="game-platform">Switch, PS4, Xbox, PC</span>
-                            <span class="game-rating">4.0/5</span>
+                        <div class="game-platforms">
+                            <span class="game-platform">PS4</span>
+                            <span class="game-platform">Switch</span>
+                            <span class="game-platform">PC</span>
                         </div>
-                        <a href="#" class="game-btn">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="game-card">
-                    <div class="game-image"></div>
-                    <div class="game-info">
-                        <h4>Attack on Titan 2</h4>
-                        <p>Swing through the air and battle Titans...</p>
-                        <div class="game-meta">
-                            <span class="game-platform">Switch, PS4, Xbox, PC</span>
-                            <span class="game-rating">4.4/5</span>
+                        <div class="quick-actions">
+                            <button class="action-btn">Buy Now</button>
+                            <button class="action-btn">Add to Wishlist</button>
                         </div>
-                        <a href="#" class="game-btn">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mobile Games Section -->
-    <section class="content-section" style="background-color: #23252b;">
+    <!-- Upcoming Games -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Upcoming Games</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-badge">Pre-order</div>
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
+                    <div class="game-info">
+                        <h4>My Hero Academia: Battle Royale</h4>
+                        <p>Action • Multiplayer</p>
+                        <div class="game-platforms">
+                            <span class="game-platform">PS5</span>
+                            <span class="game-platform">Xbox</span>
+                            <span class="game-platform">PC</span>
+                        </div>
+                        <div class="release-date">
+                            <span>Release Date: December 15, 2023</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Pre-order</button>
+                            <button class="action-btn">Add to Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-badge">Coming Soon</div>
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
+                    <div class="game-info">
+                        <h4>Attack on Titan: Final Battle</h4>
+                        <p>Action • Adventure</p>
+                        <div class="game-platforms">
+                            <span class="game-platform">PS5</span>
+                            <span class="game-platform">Xbox</span>
+                            <span class="game-platform">PC</span>
+                        </div>
+                        <div class="release-date">
+                            <span>Release Date: Q1 2024</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Notify Me</button>
+                            <button class="action-btn">Add to Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-badge">Announced</div>
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
+                    <div class="game-info">
+                        <h4>Jujutsu Kaisen: Phantom Parade</h4>
+                        <p>RPG • Story</p>
+                        <div class="game-platforms">
+                            <span class="game-platform">PS5</span>
+                            <span class="game-platform">Switch</span>
+                            <span class="game-platform">PC</span>
+                        </div>
+                        <div class="release-date">
+                            <span>Release Date: TBA 2024</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Notify Me</button>
+                            <button class="action-btn">Add to Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Games -->
+    <section class="content-section">
         <div class="container">
             <div class="section-header">
                 <h3>Mobile Games</h3>
                 <a href="#" class="view-all">View All</a>
             </div>
+            
             <div class="games-grid">
                 <div class="game-card">
-                    <div class="game-image"></div>
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
+                    <div class="game-info">
+                        <h4>Genshin Impact</h4>
+                        <p>RPG • Open World</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
+                        </div>
+                        <div class="game-platforms">
+                            <span class="game-platform">iOS</span>
+                            <span class="game-platform">Android</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Download</button>
+                            <button class="action-btn">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
+                    <div class="game-info">
+                        <h4>Fate/Grand Order</h4>
+                        <p>RPG • Gacha</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="game-platforms">
+                            <span class="game-platform">iOS</span>
+                            <span class="game-platform">Android</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Download</button>
+                            <button class="action-btn">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image" style="background-image: url('/placeholder.svg?height=200&width=300')"></div>
                     <div class="game-info">
                         <h4>Dragon Ball Legends</h4>
-                        <p>Card-based fighting game with stunning 3D visuals...</p>
-                        <div class="game-meta">
-                            <span class="game-platform">iOS, Android</span>
-                            <span class="game-rating">4.6/5</span>
+                        <p>Fighting • Card</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
                         </div>
-                        <a href="#" class="game-btn">Download</a>
-                    </div>
-                </div>
-                
-                <div class="game-card">
-                    <div class="game-image"></div>
-                    <div class="game-info">
-                        <h4>Bleach: Brave Souls</h4>
-                        <p>Action RPG with your favorite Soul Reapers...</p>
-                        <div class="game-meta">
-                            <span class="game-platform">iOS, Android</span>
-                            <span class="game-rating">4.3/5</span>
+                        <div class="game-platforms">
+                            <span class="game-platform">iOS</span>
+                            <span class="game-platform">Android</span>
                         </div>
-                        <a href="#" class="game-btn">Download</a>
-                    </div>
-                </div>
-                
-                <div class="game-card">
-                    <div class="game-image"></div>
-                    <div class="game-info">
-                        <h4>One Piece Treasure Cruise</h4>
-                        <p>Turn-based RPG with tap controls...</p>
-                        <div class="game-meta">
-                            <span class="game-platform">iOS, Android</span>
-                            <span class="game-rating">4.5/5</span>
+                        <div class="quick-actions">
+                            <button class="action-btn">Download</button>
+                            <button class="action-btn">Learn More</button>
                         </div>
-                        <a href="#" class="game-btn">Download</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="premium-banner" style="background-image: linear-gradient(to right, #2b2b2b, #3a3a3a);">
+    <!-- Premium Banner -->
+    <section class="premium-banner">
         <div class="container">
             <div class="premium-content">
-                <h3>Coming Soon</h3>
-                <p>Sign up to get notified when new anime games are released!</p>
-                <div style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px;">
-                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 12px; border-radius: 4px; border: none; background: #fff;">
-                    <button class="btn btn-primary" style="white-space: nowrap;">Notify Me</button>
-                </div>
+                <h3>AnimeCrunch Premium</h3>
+                <p>Get exclusive discounts on anime games and early access to beta tests!</p>
+                <a href="#" class="btn btn-primary" id="premium-signup-btn">Try Free for 14 Days</a>
             </div>
         </div>
     </section>
@@ -375,8 +389,8 @@
                     <h4>Account</h4>
                     <ul>
                         <li><a href="#">My Account</a></li>
-                        <li><a href="#">Watchlist</a></li>
-                        <li><a href="#">History</a></li>
+                        <li><a href="#">Game Library</a></li>
+                        <li><a href="#">Wishlist</a></li>
                         <li><a href="#">Premium</a></li>
                     </ul>
                 </div>
@@ -409,5 +423,307 @@
             </div>
         </div>
     </footer>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal">
+            <div class="modal-close" id="modal-close">✕</div>
+            <div class="modal-header">
+                <h2>Welcome to AnimeCrunch</h2>
+                <p>Your gateway to the world of anime and manga</p>
+            </div>
+            <div class="modal-tabs">
+                <div class="modal-tab active" id="login-tab">Login</div>
+                <div class="modal-tab" id="signup-tab">Sign Up</div>
+            </div>
+            <div class="modal-form active" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button class="form-submit">Log In</button>
+                <div class="form-footer">
+                    <p>Forgot your password? <a href="#">Reset it here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or login with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-form" id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-input" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-input" placeholder="Create a password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button class="form-submit">Sign Up</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="login-link">Log in here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or sign up with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Search functionality
+        const searchToggle = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        const searchInput = document.querySelector('.search-input');
+        const searchResults = document.querySelector('.search-results');
+        
+        searchToggle.addEventListener('click', () => {
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+                searchBar.classList.remove('active');
+            }
+        });
+        
+        searchInput.addEventListener('input', () => {
+            if (searchInput.value.length > 0) {
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        // Login/Signup Modal
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const premiumSignupBtn = document.getElementById('premium-signup-btn');
+        const modalOverlay = document.getElementById('login-modal');
+        const modalClose = document.getElementById('modal-close');
+        const loginTab = document.getElementById('login-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const loginLink = document.getElementById('login-link');
+        
+        function openModal(tab = 'login') {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            if (tab === 'signup') {
+                loginTab.classList.remove('active');
+                signupTab.classList.add('active');
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+            } else {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                loginForm.classList.add('active');
+                signupForm.classList.remove('active');
+            }
+        }
+        
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('login');
+        });
+        
+        signupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        premiumSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        modalClose.addEventListener('click', closeModal);
+        
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('active');
+            signupTab.classList.remove('active');
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+        });
+        
+        signupTab.addEventListener('click', () => {
+            loginTab.classList.remove('active');
+            signupTab.classList.add('active');
+            loginForm.classList.remove('active');
+            signupForm.classList.add('active');
+        });
+        
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginTab.click();
+        });
+        
+        // Games page specific functionality
+        
+        // Filter buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // In a real implementation, this would filter the games
+                const filterType = btn.textContent.toLowerCase();
+                console.log(`Filtering by: ${filterType}`);
+            });
+        });
+        
+        // Game card hover effects
+        const gameCards = document.querySelectorAll('.game-card');
+        
+        gameCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            });
+        });
+        
+        // Action buttons
+        const actionBtns = document.querySelectorAll('.action-btn');
+        
+        actionBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                if (btn.textContent === 'Add to Wishlist') {
+                    btn.textContent = 'Added ✓';
+                    btn.style.backgroundColor = '#4CAF50';
+                    btn.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        btn.textContent = 'Add to Wishlist';
+                        btn.style.backgroundColor = '';
+                        btn.style.color = '';
+                    }, 2000);
+                } else if (btn.textContent === 'Buy Now' || btn.textContent === 'Pre-order') {
+                    // In a real implementation, this would redirect to the purchase page
+                    alert('Redirecting to purchase page...');
+                } else if (btn.textContent === 'Notify Me') {
+                    btn.textContent = 'Notified ✓';
+                    btn.style.backgroundColor = '#4CAF50';
+                    btn.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        btn.textContent = 'Notify Me';
+                        btn.style.backgroundColor = '';
+                        btn.style.color = '';
+                    }, 2000);
+                } else if (btn.textContent === 'Download') {
+                    // In a real implementation, this would redirect to the app store
+                    alert('Redirecting to app store...');
+                }
+            });
+        });
+        
+        // Create floating elements in the hero section
+        function createFloatingElements() {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            
+            for (let i = 0; i < 5; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random size
+                const size = Math.random() * 50 + 30;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Random position
+                element.style.top = `${Math.random() * 80 + 10}%`;
+                element.style.left = `${Math.random() * 80 + 10}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 5 + 5;
+                element.style.animation = `float ${duration}s infinite ease-in-out`;
+                
+                // Random delay
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Random opacity
+                element.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                // Random background
+                const hue = Math.random() * 30 + 20;
+                element.style.backgroundColor = `hsla(${hue}, 80%, 50%, 0.3)`;
+                
+                // Random border radius for shape variation
+                const radius = Math.random() * 50 + 50;
+                element.style.borderRadius = `${radius}% ${100-radius}% ${radius}% ${100-radius}%`;
+                
+                hero.appendChild(element);
+            }
+        }
+        
+        // Call functions on page load
+        window.addEventListener('load', () => {
+            createFloatingElements();
+            
+            // Add animation to game cards on page load
+            gameCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
 </body>
 </html>

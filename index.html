@@ -25,9 +25,37 @@
                 </ul>
             </nav>
             <div class="header-buttons">
-                <a href="#" class="search-icon">🔍</a>
-                <a href="#" class="btn btn-secondary">Log In</a>
-                <a href="#" class="btn btn-primary">Try Free</a>
+                <div class="search-container">
+                    <div class="search-icon" id="search-toggle">🔍</div>
+                    <div class="search-bar" id="search-bar">
+                        <input type="text" class="search-input" placeholder="Search anime, manga, etc...">
+                        <div class="search-results">
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Demon Slayer</h4>
+                                    <p>TV Series • Action</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>My Hero Academia</h4>
+                                    <p>TV Series • Action</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Attack on Titan</h4>
+                                    <p>TV Series • Action</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-secondary" id="login-btn">Log In</a>
+                <a href="#" class="btn btn-primary" id="signup-btn">Try Free</a>
             </div>
         </div>
     </header>
@@ -71,7 +99,7 @@
         </div>
     </section>
 
-    <!-- Popular Section -->
+    <!-- Popular Section - Enhanced -->
     <section class="content-section">
         <div class="container">
             <div class="section-header">
@@ -80,45 +108,120 @@
             </div>
             <div class="anime-grid">
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">S6 E12</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>My Hero Academia</h4>
-                        <p>S6 E12</p>
+                        <p>Action • Adventure</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 75%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">S20 E1045</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>One Piece</h4>
-                        <p>S20 E1045</p>
+                        <p>Adventure • Fantasy</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 90%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">S2 E8</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>Jujutsu Kaisen</h4>
-                        <p>S2 E8</p>
+                        <p>Action • Supernatural</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 60%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">Final Season</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>Attack on Titan</h4>
-                        <p>Final Season</p>
+                        <p>Action • Drama</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 85%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">S1 E12</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>Chainsaw Man</h4>
-                        <p>S1 E12</p>
+                        <p>Action • Horror</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 40%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Simulcast Section -->
+    <!-- Simulcast Section - Enhanced -->
     <section class="content-section">
         <div class="container">
             <div class="section-header">
@@ -127,38 +230,113 @@
             </div>
             <div class="anime-grid">
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">New Episode</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>Spy x Family</h4>
-                        <p>New Episode</p>
+                        <p>Comedy • Action</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 0%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">New Episode</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>Bleach: TYBW</h4>
-                        <p>New Episode</p>
+                        <p>Action • Supernatural</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 0%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">New Episode</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>Blue Lock</h4>
-                        <p>New Episode</p>
+                        <p>Sports • Drama</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 0%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">New Episode</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>Boruto</h4>
-                        <p>New Episode</p>
+                        <p>Action • Adventure</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">☆</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 0%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
                 <div class="anime-card">
-                    <div class="anime-image"></div>
+                    <div class="episode-badge">New Episode</div>
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="anime-info">
                         <h4>Dr. Stone</h4>
-                        <p>New Episode</p>
+                        <p>Sci-Fi • Adventure</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="watch-progress">
+                            <div class="progress-bar" style="--progress: 0%"></div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">+ Watchlist</button>
+                            <button class="action-btn">Share</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -194,7 +372,7 @@
             <div class="premium-content">
                 <h3>AnimeCrunch Premium</h3>
                 <p>Ad-free anime, access to simulcasts, and more!</p>
-                <a href="#" class="btn btn-primary">Try Free for 14 Days</a>
+                <a href="#" class="btn btn-primary" id="premium-signup-btn">Try Free for 14 Days</a>
             </div>
         </div>
     </section>
@@ -252,19 +430,90 @@
         </div>
     </footer>
 
+    <!-- Login/Signup Modal -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal">
+            <div class="modal-close" id="modal-close">✕</div>
+            <div class="modal-header">
+                <h2>Welcome to AnimeCrunch</h2>
+                <p>Your gateway to the world of anime</p>
+            </div>
+            <div class="modal-tabs">
+                <div class="modal-tab active" id="login-tab">Login</div>
+                <div class="modal-tab" id="signup-tab">Sign Up</div>
+            </div>
+            <div class="modal-form active" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button class="form-submit">Log In</button>
+                <div class="form-footer">
+                    <p>Forgot your password? <a href="#">Reset it here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or login with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-form" id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-input" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-input" placeholder="Create a password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button class="form-submit">Sign Up</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="login-link">Log in here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or sign up with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript for animations and interactions -->
     <script>
         // Add hover effect to anime cards
         const animeCards = document.querySelectorAll('.anime-card');
         animeCards.forEach(card => {
             card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-8px)';
-                card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
+                card.style.transform = 'translateY(-12px) rotateY(5deg)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.4)';
             });
             
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-                card.style.boxShadow = 'none';
+                card.style.transform = 'translateY(0) rotateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
             });
         });
         
@@ -319,8 +568,185 @@
             }
         }
         
+        // Search functionality
+        const searchToggle = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        const searchInput = document.querySelector('.search-input');
+        const searchResults = document.querySelector('.search-results');
+        
+        searchToggle.addEventListener('click', () => {
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+                searchBar.classList.remove('active');
+            }
+        });
+        
+        searchInput.addEventListener('input', () => {
+            if (searchInput.value.length > 0) {
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        // Login/Signup Modal
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const premiumSignupBtn = document.getElementById('premium-signup-btn');
+        const modalOverlay = document.getElementById('login-modal');
+        const modalClose = document.getElementById('modal-close');
+        const loginTab = document.getElementById('login-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const loginLink = document.getElementById('login-link');
+        
+        function openModal(tab = 'login') {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            if (tab === 'signup') {
+                loginTab.classList.remove('active');
+                signupTab.classList.add('active');
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+            } else {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                loginForm.classList.add('active');
+                signupForm.classList.remove('active');
+            }
+        }
+        
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('login');
+        });
+        
+        signupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        premiumSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        modalClose.addEventListener('click', closeModal);
+        
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('active');
+            signupTab.classList.remove('active');
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+        });
+        
+        signupTab.addEventListener('click', () => {
+            loginTab.classList.remove('active');
+            signupTab.classList.add('active');
+            loginForm.classList.remove('active');
+            signupForm.classList.add('active');
+        });
+        
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginTab.click();
+        });
+        
+        // Form validation
+        const forms = document.querySelectorAll('.modal-form');
+        forms.forEach(form => {
+            const inputs = form.querySelectorAll('.form-input');
+            const submitBtn = form.querySelector('.form-submit');
+            
+            submitBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let isValid = true;
+                
+                inputs.forEach(input => {
+                    if (input.value.trim() === '') {
+                        isValid = false;
+                        input.style.borderColor = '#ff3860';
+                        input.style.animation = 'shake 0.5s';
+                        
+                        setTimeout(() => {
+                            input.style.animation = '';
+                        }, 500);
+                    } else {
+                        input.style.borderColor = '#3a3a3a';
+                    }
+                });
+                
+                if (isValid) {
+                    alert('Form submitted successfully!');
+                    closeModal();
+                }
+            });
+            
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    if (input.value.trim() !== '') {
+                        input.style.borderColor = '#3a3a3a';
+                    }
+                });
+            });
+        });
+        
+        // Interactive anime cards
+        const actionBtns = document.querySelectorAll('.action-btn');
+        actionBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (btn.textContent === '+ Watchlist') {
+                    btn.textContent = 'Added ✓';
+                    btn.style.backgroundColor = '#4CAF50';
+                    btn.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        btn.textContent = '+ Watchlist';
+                        btn.style.backgroundColor = '';
+                        btn.style.color = '';
+                    }, 2000);
+                } else if (btn.textContent === 'Share') {
+                    alert('Sharing functionality would be implemented here!');
+                }
+            });
+        });
+        
         // Call the function when the page loads
-        window.addEventListener('load', createFloatingElements);
+        window.addEventListener('load', () => {
+            createFloatingElements();
+            
+            // Add animation to anime cards on page load
+            animeCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
     </script>
 </body>
 </html>

@@ -3,109 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manga - AnimeCrunch</title>
+    <title>AnimeCrunch - Manga</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
-    <style>
-        .manga-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/placeholder.svg?height=600&width=1200');
-            height: 400px;
-        }
-        
-        .manga-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-        }
-        
-        .manga-card {
-            background-color: #2b2b2b;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .manga-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .manga-image {
-            height: 250px;
-            background-color: #3a3a3a;
-            background-image: url('/placeholder.svg?height=250&width=180');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .manga-info {
-            padding: 15px;
-        }
-        
-        .manga-info h4 {
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-        
-        .manga-info p {
-            color: #cccccc;
-            font-size: 14px;
-        }
-        
-        .manga-filters {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background-color: #2b2b2b;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background-color: #f47521;
-            color: white;
-        }
-        
-        @media (max-width: 1024px) {
-            .manga-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .manga-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .manga-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .manga-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            
-            .manga-image {
-                height: 200px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&display=swap">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="container">
             <div class="logo">
+                <div class="logo-icon">🍥</div>
                 <h1>AnimeCrunch</h1>
             </div>
             <nav>
@@ -118,140 +25,298 @@
                 </ul>
             </nav>
             <div class="header-buttons">
-                <a href="#" class="search-icon">🔍</a>
-                <a href="#" class="btn btn-secondary">Log In</a>
-                <a href="#" class="btn btn-primary">Try Free</a>
+                <div class="search-container">
+                    <div class="search-icon" id="search-toggle">🔍</div>
+                    <div class="search-bar" id="search-bar">
+                        <input type="text" class="search-input" placeholder="Search manga, authors, genres...">
+                        <div class="search-results">
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>One Piece</h4>
+                                    <p>Manga • Adventure</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Jujutsu Kaisen</h4>
+                                    <p>Manga • Action</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Chainsaw Man</h4>
+                                    <p>Manga • Horror</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-secondary" id="login-btn">Log In</a>
+                <a href="#" class="btn btn-primary" id="signup-btn">Try Free</a>
             </div>
         </div>
     </header>
 
     <!-- Manga Hero Section -->
     <section class="hero manga-hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
         <div class="hero-content">
-            <h2>MANGA</h2>
-            <p class="subtitle">Read the latest manga chapters</p>
-            <p class="description">Discover thousands of manga titles from action-packed shonen to heartwarming romance.</p>
+            <h2>DIGITAL MANGA</h2>
+            <p class="subtitle">Read the Latest Chapters</p>
+            <p class="description">Explore our vast library of manga titles from action and adventure to romance and slice of life.</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Browse All</a>
-                <a href="#" class="btn btn-secondary">My Library</a>
+                <a href="#" class="btn btn-primary">Browse Library</a>
+                <a href="#" class="btn btn-secondary">New Releases</a>
             </div>
         </div>
     </section>
 
-    <!-- Manga Content -->
+    <!-- Featured Manga -->
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h3>Popular Manga</h3>
-                <a href="#" class="view-all">View All</a>
+                <h3>Featured Manga</h3>
+                <div class="manga-view-toggle">
+                    <button class="view-toggle-btn active" data-view="grid">
+                        <span class="toggle-icon">▦</span>
+                    </button>
+                    <button class="view-toggle-btn" data-view="list">
+                        <span class="toggle-icon">☰</span>
+                    </button>
+                </div>
             </div>
             
             <div class="manga-filters">
-                <a href="#" class="filter-btn active">All</a>
-                <a href="#" class="filter-btn">Action</a>
-                <a href="#" class="filter-btn">Romance</a>
-                <a href="#" class="filter-btn">Fantasy</a>
-                <a href="#" class="filter-btn">Horror</a>
-                <a href="#" class="filter-btn">Slice of Life</a>
+                <div class="filter-label">Filter by:</div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Ongoing</button>
+                    <button class="filter-btn">Completed</button>
+                    <button class="filter-btn">New</button>
+                    <button class="filter-btn">Popular</button>
+                </div>
+                <div class="sort-dropdown">
+                    <button class="sort-btn">Sort by <span class="sort-arrow">▼</span></button>
+                    <div class="sort-options">
+                        <div class="sort-option">Latest Update</div>
+                        <div class="sort-option">Popularity</div>
+                        <div class="sort-option">Alphabetical</div>
+                        <div class="sort-option">Rating</div>
+                    </div>
+                </div>
             </div>
             
-            <div class="manga-grid">
+            <div class="manga-grid" id="manga-container">
                 <div class="manga-card">
-                    <div class="manga-image"></div>
+                    <div class="manga-badge">New Chapter</div>
+                    <div class="manga-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="manga-info">
                         <h4>One Piece</h4>
-                        <p>Chapter 1089</p>
+                        <p>Adventure • Fantasy</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
+                        </div>
+                        <div class="manga-stats">
+                            <span class="manga-stat">Ch. 1089</span>
+                            <span class="manga-stat">Ongoing</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Read Now</button>
+                            <button class="action-btn">+ Library</button>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="manga-card">
-                    <div class="manga-image"></div>
-                    <div class="manga-info">
-                        <h4>My Hero Academia</h4>
-                        <p>Chapter 392</p>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-image"></div>
+                    <div class="manga-badge">Hot</div>
+                    <div class="manga-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="manga-info">
                         <h4>Jujutsu Kaisen</h4>
-                        <p>Chapter 236</p>
+                        <p>Action • Supernatural</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
+                        </div>
+                        <div class="manga-stats">
+                            <span class="manga-stat">Ch. 253</span>
+                            <span class="manga-stat">Ongoing</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Read Now</button>
+                            <button class="action-btn">+ Library</button>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="manga-card">
-                    <div class="manga-image"></div>
+                    <div class="manga-badge">Trending</div>
+                    <div class="manga-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="manga-info">
                         <h4>Chainsaw Man</h4>
-                        <p>Chapter 145</p>
+                        <p>Action • Horror</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="manga-stats">
+                            <span class="manga-stat">Ch. 156</span>
+                            <span class="manga-stat">Ongoing</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Read Now</button>
+                            <button class="action-btn">+ Library</button>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="manga-card">
-                    <div class="manga-image"></div>
+                    <div class="manga-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="manga-info">
-                        <h4>Spy x Family</h4>
-                        <p>Chapter 78</p>
+                        <h4>My Hero Academia</h4>
+                        <p>Action • Superhero</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">☆</span>
+                        </div>
+                        <div class="manga-stats">
+                            <span class="manga-stat">Ch. 420</span>
+                            <span class="manga-stat">Ongoing</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Read Now</button>
+                            <button class="action-btn">+ Library</button>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="manga-card">
-                    <div class="manga-image"></div>
+                    <div class="manga-badge">Complete</div>
+                    <div class="manga-image" style="background-image: url('/placeholder.svg?height=280&width=200')"></div>
                     <div class="manga-info">
                         <h4>Demon Slayer</h4>
-                        <p>Complete</p>
+                        <p>Action • Supernatural</p>
+                        <div class="rating">
+                            <span class="star" style="--i:1">★</span>
+                            <span class="star" style="--i:2">★</span>
+                            <span class="star" style="--i:3">★</span>
+                            <span class="star" style="--i:4">★</span>
+                            <span class="star" style="--i:5">★</span>
+                        </div>
+                        <div class="manga-stats">
+                            <span class="manga-stat">Ch. 205</span>
+                            <span class="manga-stat">Completed</span>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">Read Now</button>
+                            <button class="action-btn">+ Library</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- New Releases Section -->
-    <section class="content-section">
+    <!-- Reading Now Section -->
+    <section class="content-section reading-now-section">
         <div class="container">
             <div class="section-header">
-                <h3>New Releases</h3>
-                <a href="#" class="view-all">View All</a>
+                <h3>Continue Reading</h3>
+                <a href="#" class="view-all">View History</a>
             </div>
-            <div class="manga-grid">
-                <div class="manga-card">
-                    <div class="manga-image"></div>
-                    <div class="manga-info">
-                        <h4>Boruto</h4>
-                        <p>New Chapter</p>
+            
+            <div class="reading-carousel">
+                <button class="carousel-arrow prev">❮</button>
+                <div class="reading-items">
+                    <div class="reading-item">
+                        <div class="reading-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                        <div class="reading-info">
+                            <h4>One Piece</h4>
+                            <p>Chapter 1089</p>
+                            <div class="reading-progress">
+                                <div class="progress-bar" style="--progress: 75%"></div>
+                                <span class="progress-text">75% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reading-item">
+                        <div class="reading-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                        <div class="reading-info">
+                            <h4>Jujutsu Kaisen</h4>
+                            <p>Chapter 253</p>
+                            <div class="reading-progress">
+                                <div class="progress-bar" style="--progress: 30%"></div>
+                                <span class="progress-text">30% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reading-item">
+                        <div class="reading-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                        <div class="reading-info">
+                            <h4>Chainsaw Man</h4>
+                            <p>Chapter 156</p>
+                            <div class="reading-progress">
+                                <div class="progress-bar" style="--progress: 50%"></div>
+                                <span class="progress-text">50% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reading-item">
+                        <div class="reading-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                        <div class="reading-info">
+                            <h4>My Hero Academia</h4>
+                            <p>Chapter 420</p>
+                            <div class="reading-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                                <span class="progress-text">90% Complete</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="manga-card">
-                    <div class="manga-image"></div>
-                    <div class="manga-info">
-                        <h4>Dragon Ball Super</h4>
-                        <p>New Chapter</p>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-image"></div>
-                    <div class="manga-info">
-                        <h4>One Punch Man</h4>
-                        <p>New Chapter</p>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-image"></div>
-                    <div class="manga-info">
-                        <h4>Tokyo Revengers</h4>
-                        <p>New Chapter</p>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-image"></div>
-                    <div class="manga-info">
-                        <h4>Black Clover</h4>
-                        <p>New Chapter</p>
-                    </div>
-                </div>
-                <div class="manga-card">
-                    <div class="manga-image"></div>
-                    <div class="manga-info">
-                        <h4>Kaiju No. 8</h4>
-                        <p>New Chapter</p>
-                    </div>
-                </div>
+                <button class="carousel-arrow next">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manga Categories -->
+    <section class="genres-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Manga Categories</h3>
+            </div>
+            <div class="genres-grid">
+                <a href="#" class="genre-card">Action</a>
+                <a href="#" class="genre-card">Adventure</a>
+                <a href="#" class="genre-card">Comedy</a>
+                <a href="#" class="genre-card">Drama</a>
+                <a href="#" class="genre-card">Fantasy</a>
+                <a href="#" class="genre-card">Horror</a>
+                <a href="#" class="genre-card">Isekai</a>
+                <a href="#" class="genre-card">Romance</a>
+                <a href="#" class="genre-card">Sci-Fi</a>
+                <a href="#" class="genre-card">Slice of Life</a>
+                <a href="#" class="genre-card">Sports</a>
+                <a href="#" class="genre-card">Supernatural</a>
             </div>
         </div>
     </section>
@@ -260,9 +325,9 @@
     <section class="premium-banner">
         <div class="container">
             <div class="premium-content">
-                <h3>AnimeCrunch Manga Premium</h3>
+                <h3>AnimeCrunch Premium</h3>
                 <p>Unlimited manga reading, early access to new chapters, and more!</p>
-                <a href="#" class="btn btn-primary">Try Free for 14 Days</a>
+                <a href="#" class="btn btn-primary" id="premium-signup-btn">Try Free for 14 Days</a>
             </div>
         </div>
     </section>
@@ -285,7 +350,7 @@
                     <h4>Account</h4>
                     <ul>
                         <li><a href="#">My Account</a></li>
-                        <li><a href="#">Watchlist</a></li>
+                        <li><a href="#">Reading List</a></li>
                         <li><a href="#">History</a></li>
                         <li><a href="#">Premium</a></li>
                     </ul>
@@ -319,5 +384,358 @@
             </div>
         </div>
     </footer>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal">
+            <div class="modal-close" id="modal-close">✕</div>
+            <div class="modal-header">
+                <h2>Welcome to AnimeCrunch</h2>
+                <p>Your gateway to the world of anime and manga</p>
+            </div>
+            <div class="modal-tabs">
+                <div class="modal-tab active" id="login-tab">Login</div>
+                <div class="modal-tab" id="signup-tab">Sign Up</div>
+            </div>
+            <div class="modal-form active" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button class="form-submit">Log In</button>
+                <div class="form-footer">
+                    <p>Forgot your password? <a href="#">Reset it here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or login with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-form" id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-input" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-input" placeholder="Create a password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button class="form-submit">Sign Up</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="login-link">Log in here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or sign up with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Search functionality
+        const searchToggle = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        const searchInput = document.querySelector('.search-input');
+        const searchResults = document.querySelector('.search-results');
+        
+        searchToggle.addEventListener('click', () => {
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+                searchBar.classList.remove('active');
+            }
+        });
+        
+        searchInput.addEventListener('input', () => {
+            if (searchInput.value.length > 0) {
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        // Login/Signup Modal
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const premiumSignupBtn = document.getElementById('premium-signup-btn');
+        const modalOverlay = document.getElementById('login-modal');
+        const modalClose = document.getElementById('modal-close');
+        const loginTab = document.getElementById('login-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const loginLink = document.getElementById('login-link');
+        
+        function openModal(tab = 'login') {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            if (tab === 'signup') {
+                loginTab.classList.remove('active');
+                signupTab.classList.add('active');
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+            } else {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                loginForm.classList.add('active');
+                signupForm.classList.remove('active');
+            }
+        }
+        
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('login');
+        });
+        
+        signupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        premiumSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        modalClose.addEventListener('click', closeModal);
+        
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('active');
+            signupTab.classList.remove('active');
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+        });
+        
+        signupTab.addEventListener('click', () => {
+            loginTab.classList.remove('active');
+            signupTab.classList.add('active');
+            loginForm.classList.remove('active');
+            signupForm.classList.add('active');
+        });
+        
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginTab.click();
+        });
+        
+        // Manga page specific functionality
+        
+        // Toggle view (grid/list)
+        const viewToggleBtns = document.querySelectorAll('.view-toggle-btn');
+        const mangaContainer = document.getElementById('manga-container');
+        
+        viewToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                viewToggleBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const viewType = btn.getAttribute('data-view');
+                if (viewType === 'list') {
+                    mangaContainer.classList.add('list-view');
+                    mangaContainer.classList.remove('manga-grid');
+                } else {
+                    mangaContainer.classList.remove('list-view');
+                    mangaContainer.classList.add('manga-grid');
+                }
+            });
+        });
+        
+        // Filter buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // In a real implementation, this would filter the manga
+                const filterType = btn.textContent.toLowerCase();
+                console.log(`Filtering by: ${filterType}`);
+            });
+        });
+        
+        // Sort dropdown
+        const sortBtn = document.querySelector('.sort-btn');
+        const sortOptions = document.querySelector('.sort-options');
+        const sortOptionItems = document.querySelectorAll('.sort-option');
+        
+        sortBtn.addEventListener('click', () => {
+            sortOptions.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!sortBtn.contains(e.target) && !sortOptions.contains(e.target)) {
+                sortOptions.classList.remove('active');
+            }
+        });
+        
+        sortOptionItems.forEach(option => {
+            option.addEventListener('click', () => {
+                sortBtn.textContent = `Sort by: ${option.textContent} ▼`;
+                sortOptions.classList.remove('active');
+                
+                // In a real implementation, this would sort the manga
+                console.log(`Sorting by: ${option.textContent}`);
+            });
+        });
+        
+        // Reading carousel
+        const prevBtn = document.querySelector('.carousel-arrow.prev');
+        const nextBtn = document.querySelector('.carousel-arrow.next');
+        const readingItems = document.querySelector('.reading-items');
+        
+        let scrollAmount = 0;
+        const itemWidth = 280; // Width of each item + margin
+        
+        prevBtn.addEventListener('click', () => {
+            scrollAmount = Math.max(scrollAmount - itemWidth, 0);
+            readingItems.style.transform = `translateX(-${scrollAmount}px)`;
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            const maxScroll = readingItems.scrollWidth - readingItems.clientWidth;
+            scrollAmount = Math.min(scrollAmount + itemWidth, maxScroll);
+            readingItems.style.transform = `translateX(-${scrollAmount}px)`;
+        });
+        
+        // Manga card hover effects
+        const mangaCards = document.querySelectorAll('.manga-card');
+        
+        mangaCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-12px) rotateY(5deg)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            });
+        });
+        
+        // Action buttons
+        const actionBtns = document.querySelectorAll('.action-btn');
+        
+        actionBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                if (btn.textContent === '+ Library') {
+                    btn.textContent = 'Added ✓';
+                    btn.style.backgroundColor = '#4CAF50';
+                    btn.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        btn.textContent = '+ Library';
+                        btn.style.backgroundColor = '';
+                        btn.style.color = '';
+                    }, 2000);
+                } else if (btn.textContent === 'Read Now') {
+                    // In a real implementation, this would open the manga reader
+                    alert('Opening manga reader...');
+                }
+            });
+        });
+        
+        // Create floating elements in the hero section
+        function createFloatingElements() {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            
+            for (let i = 0; i < 5; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random size
+                const size = Math.random() * 50 + 30;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Random position
+                element.style.top = `${Math.random() * 80 + 10}%`;
+                element.style.left = `${Math.random() * 80 + 10}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 5 + 5;
+                element.style.animation = `float ${duration}s infinite ease-in-out`;
+                
+                // Random delay
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Random opacity
+                element.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                // Random background
+                const hue = Math.random() * 30 + 20;
+                element.style.backgroundColor = `hsla(${hue}, 80%, 50%, 0.3)`;
+                
+                // Random border radius for shape variation
+                const radius = Math.random() * 50 + 50;
+                element.style.borderRadius = `${radius}% ${100-radius}% ${radius}% ${100-radius}%`;
+                
+                hero.appendChild(element);
+            }
+        }
+        
+        // Call functions on page load
+        window.addEventListener('load', () => {
+            createFloatingElements();
+            
+            // Add animation to manga cards on page load
+            mangaCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
 </body>
 </html>

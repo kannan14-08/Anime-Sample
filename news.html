@@ -3,155 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime News - AnimeCrunch</title>
+    <title>AnimeCrunch - Anime News</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
-    <style>
-        .news-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/placeholder.svg?height=600&width=1200');
-            height: 400px;
-        }
-        
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .news-card {
-            background-color: #2b2b2b;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .news-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .news-image {
-            height: 200px;
-            background-color: #3a3a3a;
-            background-image: url('/placeholder.svg?height=200&width=350');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .news-info {
-            padding: 20px;
-        }
-        
-        .news-info h4 {
-            margin-bottom: 10px;
-            font-size: 18px;
-            line-height: 1.4;
-        }
-        
-        .news-info p {
-            color: #cccccc;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        
-        .news-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #999;
-            font-size: 12px;
-        }
-        
-        .news-category {
-            display: inline-block;
-            background-color: #f47521;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            margin-bottom: 10px;
-        }
-        
-        .featured-news {
-            grid-column: span 3;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-        
-        .featured-news .news-image {
-            height: 100%;
-        }
-        
-        .featured-news .news-info {
-            padding: 30px;
-        }
-        
-        .featured-news .news-info h4 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .featured-news .news-info p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        
-        .news-filters {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background-color: #2b2b2b;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background-color: #f47521;
-            color: white;
-        }
-        
-        @media (max-width: 1024px) {
-            .news-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .featured-news {
-                grid-column: span 2;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .featured-news {
-                grid-template-columns: 1fr;
-            }
-            
-            .featured-news .news-image {
-                height: 250px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .news-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .featured-news {
-                grid-column: span 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&display=swap">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="container">
             <div class="logo">
+                <div class="logo-icon">🍥</div>
                 <h1>AnimeCrunch</h1>
             </div>
             <nav>
@@ -164,127 +25,250 @@
                 </ul>
             </nav>
             <div class="header-buttons">
-                <a href="#" class="search-icon">🔍</a>
-                <a href="#" class="btn btn-secondary">Log In</a>
-                <a href="#" class="btn btn-primary">Try Free</a>
+                <div class="search-container">
+                    <div class="search-icon" id="search-toggle">🔍</div>
+                    <div class="search-bar" id="search-bar">
+                        <input type="text" class="search-input" placeholder="Search news, articles, topics...">
+                        <div class="search-results">
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>New Demon Slayer Movie</h4>
+                                    <p>News • 2 days ago</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>One Piece Chapter Delay</h4>
+                                    <p>News • 1 week ago</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Anime Awards 2023</h4>
+                                    <p>Event • Upcoming</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-secondary" id="login-btn">Log In</a>
+                <a href="#" class="btn btn-primary" id="signup-btn">Try Free</a>
             </div>
         </div>
     </header>
 
     <!-- News Hero Section -->
     <section class="hero news-hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
         <div class="hero-content">
             <h2>ANIME NEWS</h2>
-            <p class="subtitle">Stay up to date with the latest in anime</p>
-            <p class="description">Breaking news, interviews, announcements, and more from the world of anime and manga.</p>
+            <p class="subtitle">Stay Updated with the Latest</p>
+            <p class="description">Breaking news, interviews, announcements, and everything happening in the world of anime and manga.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Latest News</a>
+                <a href="#" class="btn btn-secondary">Industry Updates</a>
+            </div>
         </div>
     </section>
 
-    <!-- News Content -->
+    <!-- Breaking News Ticker -->
+    <section class="news-ticker">
+        <div class="ticker-label">Breaking News</div>
+        <div class="ticker-content">
+            <div class="ticker-items">
+                <span class="ticker-item">Demon Slayer announces new movie for 2024</span>
+                <span class="ticker-item">One Piece manga enters final saga</span>
+                <span class="ticker-item">My Hero Academia final season confirmed</span>
+                <span class="ticker-item">Jujutsu Kaisen breaks streaming records</span>
+                <span class="ticker-item">New Studio Ghibli film in production</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured News -->
     <section class="content-section">
         <div class="container">
-            <div class="news-filters">
-                <a href="#" class="filter-btn active">All News</a>
-                <a href="#" class="filter-btn">Announcements</a>
-                <a href="#" class="filter-btn">Interviews</a>
-                <a href="#" class="filter-btn">Reviews</a>
-                <a href="#" class="filter-btn">Events</a>
-                <a href="#" class="filter-btn">Industry</a>
+            <div class="section-header">
+                <h3>Featured Stories</h3>
+                <div class="news-categories">
+                    <button class="category-btn active">All</button>
+                    <button class="category-btn">Anime</button>
+                    <button class="category-btn">Manga</button>
+                    <button class="category-btn">Industry</button>
+                    <button class="category-btn">Events</button>
+                </div>
+            </div>
+            
+            <div class="featured-news-grid">
+                <div class="featured-news-main">
+                    <div class="news-card large">
+                        <div class="news-image" style="background-image: url('/placeholder.svg?height=400&width=800')">
+                            <div class="news-overlay"></div>
+                            <div class="news-category">Breaking</div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">June 15, 2023</span>
+                                <span class="news-author">By AnimeCrunch Staff</span>
+                            </div>
+                            <h2 class="news-title">Demon Slayer Announces New Movie for 2024</h2>
+                            <p class="news-excerpt">Ufotable has officially announced a new Demon Slayer movie set to release in 2024, continuing the story after the Hashira Training Arc.</p>
+                            <a href="#" class="news-read-more">Read Full Story</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-news-side">
+                    <div class="news-card">
+                        <div class="news-image" style="background-image: url('/placeholder.svg?height=200&width=300')">
+                            <div class="news-overlay"></div>
+                            <div class="news-category">Manga</div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">June 14, 2023</span>
+                            </div>
+                            <h3 class="news-title">One Piece Manga Enters Final Saga</h3>
+                            <p class="news-excerpt">Eiichiro Oda confirms One Piece is entering its final saga after 25 years of serialization.</p>
+                            <a href="#" class="news-read-more">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <div class="news-image" style="background-image: url('/placeholder.svg?height=200&width=300')">
+                            <div class="news-overlay"></div>
+                            <div class="news-category">Anime</div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">June 13, 2023</span>
+                            </div>
+                            <h3 class="news-title">My Hero Academia Final Season Confirmed</h3>
+                            <p class="news-excerpt">Studio Bones announces the final season of My Hero Academia to air in 2024.</p>
+                            <a href="#" class="news-read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Latest News</h3>
+                <a href="#" class="view-all">View All</a>
             </div>
             
             <div class="news-grid">
-                <div class="news-card featured-news">
-                    <div class="news-image"></div>
-                    <div class="news-info">
-                        <span class="news-category">Breaking</span>
-                        <h4>Demon Slayer Season 4 Announced for 2024 Release</h4>
-                        <p>Ufotable has officially announced that Demon Slayer: Kimetsu no Yaiba will return for its fourth season in 2024, adapting the Hashira Training Arc.</p>
-                        <p>The announcement came during a special event in Tokyo where the studio also revealed a new key visual featuring Tanjiro and the Hashira.</p>
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('/placeholder.svg?height=200&width=300')">
+                        <div class="news-overlay"></div>
+                        <div class="news-category">Industry</div>
+                    </div>
+                    <div class="news-content">
                         <div class="news-meta">
-                            <span>2 hours ago</span>
-                            <span>By AnimeCrunch Staff</span>
+                            <span class="news-date">June 12, 2023</span>
                         </div>
+                        <h3 class="news-title">Crunchyroll and Funimation Complete Merger</h3>
+                        <p class="news-excerpt">The two biggest anime streaming platforms have completed their merger, creating a unified service.</p>
+                        <a href="#" class="news-read-more">Read More</a>
                     </div>
                 </div>
                 
                 <div class="news-card">
-                    <div class="news-image"></div>
-                    <div class="news-info">
-                        <span class="news-category">Interview</span>
-                        <h4>One Piece Creator Eiichiro Oda Discusses Series' Future</h4>
-                        <p>In an exclusive interview, Oda shares insights about the final saga...</p>
+                    <div class="news-image" style="background-image: url('/placeholder.svg?height=200&width=300')">
+                        <div class="news-overlay"></div>
+                        <div class="news-category">Anime</div>
+                    </div>
+                    <div class="news-content">
                         <div class="news-meta">
-                            <span>Yesterday</span>
-                            <span>By John Smith</span>
+                            <span class="news-date">June 11, 2023</span>
                         </div>
+                        <h3 class="news-title">Jujutsu Kaisen Breaks Streaming Records</h3>
+                        <p class="news-excerpt">Season 2 of Jujutsu Kaisen has broken all previous streaming records for anime premieres.</p>
+                        <a href="#" class="news-read-more">Read More</a>
                     </div>
                 </div>
                 
                 <div class="news-card">
-                    <div class="news-image"></div>
-                    <div class="news-info">
-                        <span class="news-category">Announcement</span>
-                        <h4>Jujutsu Kaisen Movie Confirmed for 2025</h4>
-                        <p>MAPPA announces a new film project following the success of season 2...</p>
+                    <div class="news-image" style="background-image: url('/placeholder.svg?height=200&width=300')">
+                        <div class="news-overlay"></div>
+                        <div class="news-category">Movies</div>
+                    </div>
+                    <div class="news-content">
                         <div class="news-meta">
-                            <span>2 days ago</span>
-                            <span>By Sarah Johnson</span>
+                            <span class="news-date">June 10, 2023</span>
                         </div>
+                        <h3 class="news-title">New Studio Ghibli Film in Production</h3>
+                        <p class="news-excerpt">Hayao Miyazaki comes out of retirement again for one final Studio Ghibli film.</p>
+                        <a href="#" class="news-read-more">Read More</a>
                     </div>
                 </div>
                 
                 <div class="news-card">
-                    <div class="news-image"></div>
-                    <div class="news-info">
-                        <span class="news-category">Event</span>
-                        <h4>Anime Expo 2023: All the Major Announcements</h4>
-                        <p>Recap of the biggest reveals and surprises from this year's event...</p>
+                    <div class="news-image" style="background-image: url('/placeholder.svg?height=200&width=300')">
+                        <div class="news-overlay"></div>
+                        <div class="news-category">Events</div>
+                    </div>
+                    <div class="news-content">
                         <div class="news-meta">
-                            <span>3 days ago</span>
-                            <span>By Mike Chen</span>
+                            <span class="news-date">June 9, 2023</span>
                         </div>
+                        <h3 class="news-title">Anime Expo 2023 Announces Guest Lineup</h3>
+                        <p class="news-excerpt">Anime Expo reveals its impressive guest lineup for the 2023 convention in Los Angeles.</p>
+                        <a href="#" class="news-read-more">Read More</a>
                     </div>
                 </div>
-                
-                <div class="news-card">
-                    <div class="news-image"></div>
-                    <div class="news-info">
-                        <span class="news-category">Industry</span>
-                        <h4>Studio Ghibli Opens New Animation Museum</h4>
-                        <p>The legendary studio unveils a new museum dedicated to the art of animation...</p>
-                        <div class="news-meta">
-                            <span>4 days ago</span>
-                            <span>By Emma Wilson</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="news-card">
-                    <div class="news-image"></div>
-                    <div class="news-info">
-                        <span class="news-category">Review</span>
-                        <h4>Chainsaw Man Season 1: The Complete Review</h4>
-                        <p>Our in-depth analysis of MAPPA's adaptation of the popular manga...</p>
-                        <div class="news-meta">
-                            <span>5 days ago</span>
-                            <span>By David Lee</span>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            
+            <div class="load-more-container">
+                <button class="load-more-btn">Load More News</button>
             </div>
         </div>
     </section>
 
     <!-- Newsletter Section -->
-    <section class="premium-banner" style="background-image: linear-gradient(to right, #2b2b2b, #3a3a3a);">
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for weekly anime and manga news delivered straight to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div class="newsletter-options">
+                    <div class="newsletter-option">
+                        <input type="checkbox" id="daily-news" checked>
+                        <label for="daily-news">Daily News</label>
+                    </div>
+                    <div class="newsletter-option">
+                        <input type="checkbox" id="weekly-roundup" checked>
+                        <label for="weekly-roundup">Weekly Roundup</label>
+                    </div>
+                    <div class="newsletter-option">
+                        <input type="checkbox" id="special-announcements" checked>
+                        <label for="special-announcements">Special Announcements</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Banner -->
+    <section class="premium-banner">
         <div class="container">
             <div class="premium-content">
-                <h3>Stay Updated</h3>
-                <p>Subscribe to our newsletter for weekly anime news and updates!</p>
-                <div style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px;">
-                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 12px; border-radius: 4px; border: none; background: #fff;">
-                    <button class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
-                </div>
+                <h3>AnimeCrunch Premium</h3>
+                <p>Get exclusive access to industry interviews, behind-the-scenes content, and more!</p>
+                <a href="#" class="btn btn-primary" id="premium-signup-btn">Try Free for 14 Days</a>
             </div>
         </div>
     </section>
@@ -307,8 +291,8 @@
                     <h4>Account</h4>
                     <ul>
                         <li><a href="#">My Account</a></li>
-                        <li><a href="#">Watchlist</a></li>
-                        <li><a href="#">History</a></li>
+                        <li><a href="#">Saved Articles</a></li>
+                        <li><a href="#">Notifications</a></li>
                         <li><a href="#">Premium</a></li>
                     </ul>
                 </div>
@@ -341,5 +325,330 @@
             </div>
         </div>
     </footer>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal">
+            <div class="modal-close" id="modal-close">✕</div>
+            <div class="modal-header">
+                <h2>Welcome to AnimeCrunch</h2>
+                <p>Your gateway to the world of anime and manga</p>
+            </div>
+            <div class="modal-tabs">
+                <div class="modal-tab active" id="login-tab">Login</div>
+                <div class="modal-tab" id="signup-tab">Sign Up</div>
+            </div>
+            <div class="modal-form active" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button class="form-submit">Log In</button>
+                <div class="form-footer">
+                    <p>Forgot your password? <a href="#">Reset it here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or login with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-form" id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-input" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-input" placeholder="Create a password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button class="form-submit">Sign Up</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="login-link">Log in here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or sign up with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Search functionality
+        const searchToggle = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        const searchInput = document.querySelector('.search-input');
+        const searchResults = document.querySelector('.search-results');
+        
+        searchToggle.addEventListener('click', () => {
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+                searchBar.classList.remove('active');
+            }
+        });
+        
+        searchInput.addEventListener('input', () => {
+            if (searchInput.value.length > 0) {
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        // Login/Signup Modal
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const premiumSignupBtn = document.getElementById('premium-signup-btn');
+        const modalOverlay = document.getElementById('login-modal');
+        const modalClose = document.getElementById('modal-close');
+        const loginTab = document.getElementById('login-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const loginLink = document.getElementById('login-link');
+        
+        function openModal(tab = 'login') {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            if (tab === 'signup') {
+                loginTab.classList.remove('active');
+                signupTab.classList.add('active');
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+            } else {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                loginForm.classList.add('active');
+                signupForm.classList.remove('active');
+            }
+        }
+        
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('login');
+        });
+        
+        signupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        premiumSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        modalClose.addEventListener('click', closeModal);
+        
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('active');
+            signupTab.classList.remove('active');
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+        });
+        
+        signupTab.addEventListener('click', () => {
+            loginTab.classList.remove('active');
+            signupTab.classList.add('active');
+            loginForm.classList.remove('active');
+            signupForm.classList.add('active');
+        });
+        
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginTab.click();
+        });
+        
+        // News page specific functionality
+        
+        // News ticker animation
+        const tickerItems = document.querySelector('.ticker-items');
+        
+        function animateTicker() {
+            if (!tickerItems) return;
+            
+            const firstItem = tickerItems.firstElementChild;
+            const width = firstItem.offsetWidth;
+            
+            tickerItems.style.transition = 'transform 0.5s ease-in-out';
+            tickerItems.style.transform = `translateX(-${width + 20}px)`;
+            
+            setTimeout(() => {
+                tickerItems.style.transition = 'none';
+                tickerItems.style.transform = 'translateX(0)';
+                tickerItems.appendChild(firstItem.cloneNode(true));
+                tickerItems.removeChild(firstItem);
+            }, 500);
+        }
+        
+        setInterval(animateTicker, 5000);
+        
+        // Category buttons
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // In a real implementation, this would filter the news
+                const category = btn.textContent.toLowerCase();
+                console.log(`Filtering by: ${category}`);
+            });
+        });
+        
+        // Load more button
+        const loadMoreBtn = document.querySelector('.load-more-btn');
+        const newsGrid = document.querySelector('.news-grid');
+        
+        loadMoreBtn.addEventListener('click', () => {
+            loadMoreBtn.textContent = 'Loading...';
+            
+            // Simulate loading delay
+            setTimeout(() => {
+                // In a real implementation, this would load more news from an API
+                // For now, we'll just clone the existing news cards
+                const newsCards = document.querySelectorAll('.news-grid .news-card');
+                
+                newsCards.forEach(card => {
+                    const clone = card.cloneNode(true);
+                    newsGrid.appendChild(clone);
+                });
+                
+                loadMoreBtn.textContent = 'Load More News';
+            }, 1500);
+        });
+        
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const email = emailInput.value;
+            
+            if (email) {
+                // In a real implementation, this would submit the form to a server
+                alert(`Thank you for subscribing with ${email}!`);
+                emailInput.value = '';
+            }
+        });
+        
+        // News card hover effects
+        const newsCards = document.querySelectorAll('.news-card');
+        
+        newsCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            });
+        });
+        
+        // Create floating elements in the hero section
+        function createFloatingElements() {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            
+            for (let i = 0; i < 5; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random size
+                const size = Math.random() * 50 + 30;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Random position
+                element.style.top = `${Math.random() * 80 + 10}%`;
+                element.style.left = `${Math.random() * 80 + 10}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 5 + 5;
+                element.style.animation = `float ${duration}s infinite ease-in-out`;
+                
+                // Random delay
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Random opacity
+                element.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                // Random background
+                const hue = Math.random() * 30 + 20;
+                element.style.backgroundColor = `hsla(${hue}, 80%, 50%, 0.3)`;
+                
+                // Random border radius for shape variation
+                const radius = Math.random() * 50 + 50;
+                element.style.borderRadius = `${radius}% ${100-radius}% ${radius}% ${100-radius}%`;
+                
+                hero.appendChild(element);
+            }
+        }
+        
+        // Call functions on page load
+        window.addEventListener('load', () => {
+            createFloatingElements();
+            
+            // Add animation to news cards on page load
+            newsCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
 </body>
 </html>
