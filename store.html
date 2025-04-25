@@ -3,173 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Store - AnimeCrunch</title>
+    <title>AnimeCrunch - Anime Store</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
-    <style>
-        .store-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/placeholder.svg?height=600&width=1200');
-            height: 400px;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        
-        .product-card {
-            background-color: #2b2b2b;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .product-image {
-            height: 200px;
-            background-color: #3a3a3a;
-            background-image: url('/placeholder.svg?height=200&width=200');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .product-info {
-            padding: 15px;
-        }
-        
-        .product-info h4 {
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-        
-        .product-price {
-            color: #f47521;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .product-btn {
-            display: block;
-            background-color: #f47521;
-            color: white;
-            padding: 8px 0;
-            border-radius: 4px;
-            text-align: center;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-        
-        .product-btn:hover {
-            background-color: #e06a1c;
-        }
-        
-        .featured-products {
-            margin-bottom: 50px;
-        }
-        
-        .store-categories {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-        
-        .category-card {
-            position: relative;
-            height: 150px;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #3a3a3a;
-            background-image: url('/placeholder.svg?height=150&width=350');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
-        }
-        
-        .category-name {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .store-filters {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background-color: #2b2b2b;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background-color: #f47521;
-            color: white;
-        }
-        
-        @media (max-width: 1024px) {
-            .products-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .store-categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .store-categories {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .product-image {
-                height: 250px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&display=swap">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="container">
             <div class="logo">
+                <div class="logo-icon">🍥</div>
                 <h1>AnimeCrunch</h1>
             </div>
             <nav>
@@ -182,22 +25,53 @@
                 </ul>
             </nav>
             <div class="header-buttons">
-                <a href="#" class="search-icon">🔍</a>
-                <a href="#" class="btn btn-secondary">Log In</a>
-                <a href="#" class="btn btn-primary">Try Free</a>
+                <div class="search-container">
+                    <div class="search-icon" id="search-toggle">🔍</div>
+                    <div class="search-bar" id="search-bar">
+                        <input type="text" class="search-input" placeholder="Search products, merch, figures...">
+                        <div class="search-results">
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Demon Slayer Figure</h4>
+                                    <p>Collectible • Figure</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Attack on Titan Hoodie</h4>
+                                    <p>Apparel • Clothing</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>My Hero Academia Poster</h4>
+                                    <p>Home • Decor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-secondary" id="login-btn">Log In</a>
+                <a href="#" class="btn btn-primary" id="signup-btn">Try Free</a>
             </div>
         </div>
     </header>
 
     <!-- Store Hero Section -->
     <section class="hero store-hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
         <div class="hero-content">
             <h2>ANIME STORE</h2>
             <p class="subtitle">Official Merchandise & Collectibles</p>
-            <p class="description">Shop exclusive figures, apparel, manga, and more from your favorite anime series.</p>
+            <p class="description">Shop exclusive anime merchandise, figures, apparel, and more from your favorite series.</p>
             <div class="hero-buttons">
                 <a href="#" class="btn btn-primary">Shop Now</a>
-                <a href="#" class="btn btn-secondary">View Cart</a>
+                <a href="#" class="btn btn-secondary">New Arrivals</a>
             </div>
         </div>
     </section>
@@ -210,127 +84,95 @@
             </div>
             
             <div class="store-categories">
-                <a href="#" class="category-card">
-                    <div class="category-overlay">
-                        <span class="category-name">Figures & Collectibles</span>
-                    </div>
+                <a href="#" class="store-category" style="background-image: url('/placeholder.svg?height=150&width=300')">
+                    <span class="store-category-name">Figures</span>
                 </a>
-                <a href="#" class="category-card">
-                    <div class="category-overlay">
-                        <span class="category-name">Apparel</span>
-                    </div>
+                <a href="#" class="store-category" style="background-image: url('/placeholder.svg?height=150&width=300')">
+                    <span class="store-category-name">Apparel</span>
                 </a>
-                <a href="#" class="category-card">
-                    <div class="category-overlay">
-                        <span class="category-name">Manga & Books</span>
-                    </div>
+                <a href="#" class="store-category" style="background-image: url('/placeholder.svg?height=150&width=300')">
+                    <span class="store-category-name">Accessories</span>
                 </a>
-                <a href="#" class="category-card">
-                    <div class="category-overlay">
-                        <span class="category-name">Home & Lifestyle</span>
-                    </div>
-                </a>
-                <a href="#" class="category-card">
-                    <div class="category-overlay">
-                        <span class="category-name">Accessories</span>
-                    </div>
-                </a>
-                <a href="#" class="category-card">
-                    <div class="category-overlay">
-                        <span class="category-name">Limited Editions</span>
-                    </div>
+                <a href="#" class="store-category" style="background-image: url('/placeholder.svg?height=150&width=300')">
+                    <span class="store-category-name">Home & Decor</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Featured Products -->
-    <section class="content-section featured-products">
+    <section class="content-section">
         <div class="container">
             <div class="section-header">
                 <h3>Featured Products</h3>
-                <a href="#" class="view-all">View All</a>
-            </div>
-            
-            <div class="store-filters">
-                <a href="#" class="filter-btn active">All</a>
-                <a href="#" class="filter-btn">Demon Slayer</a>
-                <a href="#" class="filter-btn">My Hero Academia</a>
-                <a href="#" class="filter-btn">One Piece</a>
-                <a href="#" class="filter-btn">Jujutsu Kaisen</a>
-                <a href="#" class="filter-btn">Attack on Titan</a>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Figures</button>
+                    <button class="filter-btn">Apparel</button>
+                    <button class="filter-btn">Accessories</button>
+                    <button class="filter-btn">Home & Decor</button>
+                </div>
             </div>
             
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-badge">New</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
                     <div class="product-info">
                         <h4>Tanjiro Kamado Figure</h4>
-                        <p class="product-price">$59.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
+                        <p>Demon Slayer • Collectible</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$59.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
                     <div class="product-info">
-                        <h4>My Hero Academia T-Shirt</h4>
-                        <p class="product-price">$24.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
+                        <h4>Survey Corps Hoodie</h4>
+                        <p>Attack on Titan • Apparel</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="original-price">$49.99</span>
+                                <span class="price">$39.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
                     <div class="product-info">
-                        <h4>One Piece Manga Box Set</h4>
-                        <p class="product-price">$149.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
+                        <h4>UA Academy Backpack</h4>
+                        <p>My Hero Academia • Accessories</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$34.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-badge">20% OFF</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
                     <div class="product-info">
-                        <h4>Gojo Satoru Figure</h4>
-                        <p class="product-price">$64.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-info">
-                        <h4>Attack on Titan Hoodie</h4>
-                        <p class="product-price">$49.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-info">
-                        <h4>Demon Slayer Poster Set</h4>
-                        <p class="product-price">$19.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-info">
-                        <h4>Chainsaw Man Keychain</h4>
-                        <p class="product-price">$12.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-info">
-                        <h4>Naruto Shippuden Mug</h4>
-                        <p class="product-price">$16.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
+                        <h4>Straw Hat Crew Poster Set</h4>
+                        <p>One Piece • Home Decor</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="original-price">$24.99</span>
+                                <span class="price">$19.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -338,62 +180,216 @@
     </section>
 
     <!-- New Arrivals -->
-    <section class="content-section" style="background-color: #23252b;">
+    <section class="content-section">
         <div class="container">
             <div class="section-header">
                 <h3>New Arrivals</h3>
                 <a href="#" class="view-all">View All</a>
             </div>
+            
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-badge">New</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
                     <div class="product-info">
-                        <h4>Luffy Gear 5 Figure</h4>
-                        <p class="product-price">$79.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
+                        <h4>Sukuna Figure</h4>
+                        <p>Jujutsu Kaisen • Collectible</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$64.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-badge">New</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
                     <div class="product-info">
-                        <h4>Jujutsu Kaisen Backpack</h4>
-                        <p class="product-price">$39.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
+                        <h4>Chainsaw Man T-Shirt</h4>
+                        <p>Chainsaw Man • Apparel</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$29.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-badge">New</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
                     <div class="product-info">
-                        <h4>Spy x Family Plush Set</h4>
-                        <p class="product-price">$34.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
+                        <h4>Spy x Family Mug Set</h4>
+                        <p>Spy x Family • Home</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$24.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-badge">New</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
                     <div class="product-info">
-                        <h4>Bleach TYBW Wall Scroll</h4>
-                        <p class="product-price">$29.99</p>
-                        <a href="#" class="product-btn">Add to Cart</a>
+                        <h4>Bleach Sword Keychain</h4>
+                        <p>Bleach • Accessories</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$12.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
+    <!-- Best Sellers -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Best Sellers</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">Top Rated</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
+                    <div class="product-info">
+                        <h4>Eren Yeager Action Figure</h4>
+                        <p>Attack on Titan • Collectible</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$49.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
+                    <div class="product-info">
+                        <h4>Naruto Shippuden Headband</h4>
+                        <p>Naruto • Accessories</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$19.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
+                    <div class="product-info">
+                        <h4>Gojo Satoru Sunglasses</h4>
+                        <p>Jujutsu Kaisen • Accessories</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$22.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">Fan Favorite</div>
+                    <div class="product-image" style="background-image: url('/placeholder.svg?height=250&width=200')"></div>
+                    <div class="product-info">
+                        <h4>Death Note Replica</h4>
+                        <p>Death Note • Collectible</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$29.99</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-summary">
+                <div class="cart-header">
+                    <h3>Your Cart</h3>
+                    <span>3 items</span>
+                </div>
+                
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <div class="cart-item-image" style="background-image: url('/placeholder.svg?height=60&width=60')"></div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">Tanjiro Kamado Figure</div>
+                            <div class="cart-item-price">$59.99</div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item">
+                        <div class="cart-item-image" style="background-image: url('/placeholder.svg?height=60&width=60')"></div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">Survey Corps Hoodie</div>
+                            <div class="cart-item-price">$39.99</div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item">
+                        <div class="cart-item-image" style="background-image: url('/placeholder.svg?height=60&width=60')"></div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">Naruto Shippuden Headband</div>
+                            <div class="cart-item-price">$19.99</div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-total">
+                    <div class="total-label">Total:</div>
+                    <div class="total-amount">$119.97</div>
+                </div>
+                
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Banner -->
     <section class="premium-banner">
         <div class="container">
             <div class="premium-content">
-                <h3>Join Our Mailing List</h3>
-                <p>Subscribe for exclusive deals, new product alerts, and 10% off your first order!</p>
-                <div style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px;">
-                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 12px; border-radius: 4px; border: none; background: #fff;">
-                    <button class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
-                </div>
+                <h3>AnimeCrunch Premium</h3>
+                <p>Get exclusive discounts and early access to limited edition merchandise!</p>
+                <a href="#" class="btn btn-primary" id="premium-signup-btn">Try Free for 14 Days</a>
             </div>
         </div>
     </section>
@@ -416,8 +412,8 @@
                     <h4>Account</h4>
                     <ul>
                         <li><a href="#">My Account</a></li>
-                        <li><a href="#">Watchlist</a></li>
-                        <li><a href="#">History</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Wishlist</a></li>
                         <li><a href="#">Premium</a></li>
                     </ul>
                 </div>
@@ -450,5 +446,323 @@
             </div>
         </div>
     </footer>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal">
+            <div class="modal-close" id="modal-close">✕</div>
+            <div class="modal-header">
+                <h2>Welcome to AnimeCrunch</h2>
+                <p>Your gateway to the world of anime and manga</p>
+            </div>
+            <div class="modal-tabs">
+                <div class="modal-tab active" id="login-tab">Login</div>
+                <div class="modal-tab" id="signup-tab">Sign Up</div>
+            </div>
+            <div class="modal-form active" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button class="form-submit">Log In</button>
+                <div class="form-footer">
+                    <p>Forgot your password? <a href="#">Reset it here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or login with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-form" id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-input" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-input" placeholder="Create a password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button class="form-submit">Sign Up</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="login-link">Log in here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or sign up with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Search functionality
+        const searchToggle = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        const searchInput = document.querySelector('.search-input');
+        const searchResults = document.querySelector('.search-results');
+        
+        searchToggle.addEventListener('click', () => {
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+                searchBar.classList.remove('active');
+            }
+        });
+        
+        searchInput.addEventListener('input', () => {
+            if (searchInput.value.length > 0) {
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        // Login/Signup Modal
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const premiumSignupBtn = document.getElementById('premium-signup-btn');
+        const modalOverlay = document.getElementById('login-modal');
+        const modalClose = document.getElementById('modal-close');
+        const loginTab = document.getElementById('login-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const loginLink = document.getElementById('login-link');
+        
+        function openModal(tab = 'login') {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            if (tab === 'signup') {
+                loginTab.classList.remove('active');
+                signupTab.classList.add('active');
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+            } else {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                loginForm.classList.add('active');
+                signupForm.classList.remove('active');
+            }
+        }
+        
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('login');
+        });
+        
+        signupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        premiumSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        modalClose.addEventListener('click', closeModal);
+        
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('active');
+            signupTab.classList.remove('active');
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+        });
+        
+        signupTab.addEventListener('click', () => {
+            loginTab.classList.remove('active');
+            signupTab.classList.add('active');
+            loginForm.classList.remove('active');
+            signupForm.classList.add('active');
+        });
+        
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginTab.click();
+        });
+        
+        // Store page specific functionality
+        
+        // Filter buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // In a real implementation, this would filter the products
+                const filterType = btn.textContent.toLowerCase();
+                console.log(`Filtering by: ${filterType}`);
+            });
+        });
+        
+        // Product card hover effects
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            });
+        });
+        
+        // Add to cart buttons
+        const addToCartBtns = document.querySelectorAll('.add-to-cart');
+        
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.textContent = 'Added ✓';
+                btn.style.backgroundColor = '#4CAF50';
+                
+                setTimeout(() => {
+                    btn.textContent = 'Add to Cart';
+                    btn.style.backgroundColor = '';
+                }, 2000);
+                
+                // In a real implementation, this would add the product to the cart
+                console.log('Product added to cart');
+            });
+        });
+        
+        // Cart quantity buttons
+        const quantityBtns = document.querySelectorAll('.quantity-btn');
+        
+        quantityBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const input = btn.parentElement.querySelector('.quantity-input');
+                let value = parseInt(input.value);
+                
+                if (btn.textContent === '+') {
+                    value++;
+                } else if (btn.textContent === '-' && value > 1) {
+                    value--;
+                }
+                
+                input.value = value;
+                
+                // In a real implementation, this would update the cart total
+                updateCartTotal();
+            });
+        });
+        
+        function updateCartTotal() {
+            // This is a simplified example
+            const cartItems = document.querySelectorAll('.cart-item');
+            let total = 0;
+            
+            cartItems.forEach(item => {
+                const price = parseFloat(item.querySelector('.cart-item-price').textContent.replace('$', ''));
+                const quantity = parseInt(item.querySelector('.quantity-input').value);
+                total += price * quantity;
+            });
+            
+            document.querySelector('.total-amount').textContent = `$${total.toFixed(2)}`;
+        }
+        
+        // Create floating elements in the hero section
+        function createFloatingElements() {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            
+            for (let i = 0; i < 5; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random size
+                const size = Math.random() * 50 + 30;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Random position
+                element.style.top = `${Math.random() * 80 + 10}%`;
+                element.style.left = `${Math.random() * 80 + 10}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 5 + 5;
+                element.style.animation = `float ${duration}s infinite ease-in-out`;
+                
+                // Random delay
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Random opacity
+                element.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                // Random background
+                const hue = Math.random() * 30 + 20;
+                element.style.backgroundColor = `hsla(${hue}, 80%, 50%, 0.3)`;
+                
+                // Random border radius for shape variation
+                const radius = Math.random() * 50 + 50;
+                element.style.borderRadius = `${radius}% ${100-radius}% ${radius}% ${100-radius}%`;
+                
+                hero.appendChild(element);
+            }
+        }
+        
+        // Call functions on page load
+        window.addEventListener('load', () => {
+            createFloatingElements();
+            
+            // Add animation to product cards on page load
+            productCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
 </body>
 </html>

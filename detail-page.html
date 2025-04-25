@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeCrunch - Content Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="detail-page.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&display=swap">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🍥</div>
+                <h1>AnimeCrunch</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Browse</a></li>
+                    <li><a href="manga.html">Manga</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <div class="search-container">
+                    <div class="search-icon" id="search-toggle">🔍</div>
+                    <div class="search-bar" id="search-bar">
+                        <input type="text" class="search-input" placeholder="Search anime, manga, news...">
+                        <div class="search-results">
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>One Piece</h4>
+                                    <p>Anime • Adventure</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Demon Slayer</h4>
+                                    <p>Anime • Action</p>
+                                </div>
+                            </div>
+                            <div class="search-result-item">
+                                <div class="search-result-img" style="background-image: url('/placeholder.svg?height=70&width=50')"></div>
+                                <div class="search-result-info">
+                                    <h4>Attack on Titan</h4>
+                                    <p>Anime • Drama</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-secondary" id="login-btn">Log In</a>
+                <a href="#" class="btn btn-primary" id="signup-btn">Try Free</a>
+            </div>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="index.html">Browse</a></li>
+                <li><a href="manga.html">Manga</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="#" id="mobile-login-btn">Log In</a></li>
+                <li><a href="#" id="mobile-signup-btn" class="highlight">Try Free</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">›</span>
+                <a href="#" id="content-type-link">Anime</a>
+                <span class="separator">›</span>
+                <span id="content-title">One Piece</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Hero Section -->
+    <section class="detail-hero">
+        <div class="detail-hero-bg" id="detail-hero-bg" style="background-image: url('/placeholder.svg?height=600&width=1200')"></div>
+        <div class="container">
+            <div class="detail-hero-content">
+                <div class="detail-poster" id="detail-poster" style="background-image: url('/placeholder.svg?height=450&width=300')"></div>
+                <div class="detail-info">
+                    <div class="detail-badges" id="detail-badges">
+                        <span class="detail-badge">SUB</span>
+                        <span class="detail-badge">DUB</span>
+                        <span class="detail-badge">HD</span>
+                    </div>
+                    <h1 id="detail-title">One Piece</h1>
+                    <div class="detail-meta" id="detail-meta">
+                        <span class="detail-year">1999</span>
+                        <span class="detail-separator">•</span>
+                        <span class="detail-episodes">1000+ Episodes</span>
+                        <span class="detail-separator">•</span>
+                        <span class="detail-rating">TV-14</span>
+                    </div>
+                    <div class="detail-genres" id="detail-genres">
+                        <span class="detail-genre">Adventure</span>
+                        <span class="detail-genre">Action</span>
+                        <span class="detail-genre">Comedy</span>
+                        <span class="detail-genre">Fantasy</span>
+                    </div>
+                    <p class="detail-description" id="detail-description">
+                        Monkey D. Luffy wants to become the King of all pirates. Along his quest, he meets many friends and foes, all while trying to find the legendary treasure known as One Piece.
+                    </p>
+                    <div class="detail-actions">
+                        <button class="btn btn-primary btn-large" id="watch-now-btn">
+                            <span class="btn-icon">▶</span> Watch Now
+                        </button>
+                        <button class="btn btn-secondary btn-large" id="add-to-list-btn">
+                            <span class="btn-icon">+</span> Add to List
+                        </button>
+                        <button class="btn btn-icon-only" id="share-btn">
+                            <span class="btn-icon">↗</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Player Section -->
+    <section class="video-player-section" id="video-player-section">
+        <div class="container">
+            <div class="video-player-container">
+                <div class="video-player-header">
+                    <h3 id="video-title">One Piece - Episode 1: I'm Luffy! The Man Who's Gonna Be King of the Pirates!</h3>
+                    <button class="close-video-btn" id="close-video-btn">✕</button>
+                </div>
+                <div class="video-player-wrapper">
+                    <div class="video-player" id="video-player">
+                        <video id="main-video" controls poster="/placeholder.svg?height=720&width=1280">
+                            <source src="#" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay" id="video-overlay">
+                            <div class="play-button" id="play-button">▶</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-controls">
+                    <div class="video-quality">
+                        <span>Quality:</span>
+                        <select id="quality-selector">
+                            <option value="1080p">1080p</option>
+                            <option value="720p" selected>720p</option>
+                            <option value="480p">480p</option>
+                            <option value="360p">360p</option>
+                        </select>
+                    </div>
+                    <div class="video-language">
+                        <span>Audio:</span>
+                        <select id="audio-selector">
+                            <option value="japanese" selected>Japanese</option>
+                            <option value="english">English</option>
+                        </select>
+                    </div>
+                    <div class="video-subtitles">
+                        <span>Subtitles:</span>
+                        <select id="subtitle-selector">
+                            <option value="english" selected>English</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="french">French</option>
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Episodes Section -->
+    <section class="content-section episodes-section" id="episodes-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Episodes</h3>
+                <div class="episodes-filter">
+                    <select id="season-selector">
+                        <option value="all">All Seasons</option>
+                        <option value="1" selected>Season 1</option>
+                        <option value="2">Season 2</option>
+                        <option value="3">Season 3</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="episodes-grid" id="episodes-grid">
+                <div class="episode-card" data-episode="1">
+                    <div class="episode-thumbnail" style="background-image: url('/placeholder.svg?height=180&width=320')">
+                        <div class="episode-number">1</div>
+                        <div class="episode-duration">24:12</div>
+                        <div class="episode-play-overlay">
+                            <div class="episode-play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="episode-info">
+                        <h4>I'm Luffy! The Man Who's Gonna Be King of the Pirates!</h4>
+                        <p>Monkey D. Luffy sets out on his adventure to find the One Piece and become the Pirate King.</p>
+                    </div>
+                </div>
+                
+                <div class="episode-card" data-episode="2">
+                    <div class="episode-thumbnail" style="background-image: url('/placeholder.svg?height=180&width=320')">
+                        <div class="episode-number">2</div>
+                        <div class="episode-duration">24:05</div>
+                        <div class="episode-play-overlay">
+                            <div class="episode-play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="episode-info">
+                        <h4>Enter the Great Swordsman! Pirate Hunter Roronoa Zoro!</h4>
+                        <p>Luffy tries to recruit the famous pirate hunter Roronoa Zoro to join his crew.</p>
+                    </div>
+                </div>
+                
+                <div class="episode-card" data-episode="3">
+                    <div class="episode-thumbnail" style="background-image: url('/placeholder.svg?height=180&width=320')">
+                        <div class="episode-number">3</div>
+                        <div class="episode-duration">24:10</div>
+                        <div class="episode-play-overlay">
+                            <div class="episode-play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="episode-info">
+                        <h4>Morgan versus Luffy! Who's the Mysterious Pretty Girl?</h4>
+                        <p>Luffy and Zoro face off against Captain Morgan while meeting a mysterious girl.</p>
+                    </div>
+                </div>
+                
+                <div class="episode-card" data-episode="4">
+                    <div class="episode-thumbnail" style="background-image: url('/placeholder.svg?height=180&width=320')">
+                        <div class="episode-number">4</div>
+                        <div class="episode-duration">24:08</div>
+                        <div class="episode-play-overlay">
+                            <div class="episode-play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="episode-info">
+                        <h4>Luffy's Past! Enter Red-Haired Shanks!</h4>
+                        <p>The story of how Luffy got his straw hat and his promise to the legendary pirate Shanks.</p>
+                    </div>
+                </div>
+                
+                <div class="episode-card" data-episode="5">
+                    <div class="episode-thumbnail" style="background-image: url('/placeholder.svg?height=180&width=320')">
+                        <div class="episode-number">5</div>
+                        <div class="episode-duration">24:15</div>
+                        <div class="episode-play-overlay">
+                            <div class="episode-play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="episode-info">
+                        <h4>A Terrifying Mysterious Power! Captain Buggy, the Clown Pirate!</h4>
+                        <p>Luffy and his crew encounter the dangerous Buggy the Clown and his Devil Fruit powers.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more-container">
+                <button class="load-more-btn" id="load-more-episodes">Load More Episodes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>You May Also Like</h3>
+            </div>
+            
+            <div class="anime-grid">
+                <div class="anime-card">
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                    <div class="anime-info">
+                        <h4>Naruto</h4>
+                        <p>Adventure • Action</p>
+                    </div>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                    <div class="anime-info">
+                        <h4>Bleach</h4>
+                        <p>Action • Supernatural</p>
+                    </div>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                    <div class="anime-info">
+                        <h4>Dragon Ball Z</h4>
+                        <p>Action • Adventure</p>
+                    </div>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                    <div class="anime-info">
+                        <h4>Hunter x Hunter</h4>
+                        <p>Adventure • Fantasy</p>
+                    </div>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="anime-image" style="background-image: url('/placeholder.svg?height=200&width=150')"></div>
+                    <div class="anime-info">
+                        <h4>My Hero Academia</h4>
+                        <p>Action • Superhero</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="content-section comments-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Comments</h3>
+                <div class="comments-sort">
+                    <select id="comments-sort-selector">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="popular" selected>Most Popular</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="comments-container">
+                <div class="comment-form">
+                    <div class="comment-avatar" style="background-image: url('/placeholder.svg?height=50&width=50')"></div>
+                    <div class="comment-input-container">
+                        <textarea class="comment-input" placeholder="Add a comment..."></textarea>
+                        <button class="comment-submit">Post</button>
+                    </div>
+                </div>
+                
+                <div class="comments-list">
+                    <div class="comment">
+                        <div class="comment-avatar" style="background-image: url('/placeholder.svg?height=50&width=50')"></div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <div class="comment-username">PirateKing99</div>
+                                <div class="comment-time">2 days ago</div>
+                            </div>
+                            <div class="comment-text">
+                                One Piece is the greatest anime of all time! I've been watching since episode 1 and I'm still hooked. The world-building is incredible.
+                            </div>
+                            <div class="comment-actions">
+                                <button class="comment-like">👍 142</button>
+                                <button class="comment-dislike">👎 5</button>
+                                <button class="comment-reply">Reply</button>
+                            </div>
+                            
+                            <div class="comment-replies">
+                                <div class="comment">
+                                    <div class="comment-avatar" style="background-image: url('/placeholder.svg?height=50&width=50')"></div>
+                                    <div class="comment-content">
+                                        <div class="comment-header">
+                                            <div class="comment-username">StrawHatFan</div>
+                                            <div class="comment-time">1 day ago</div>
+                                        </div>
+                                        <div class="comment-text">
+                                            Totally agree! The character development over the years has been amazing. Oda is a genius!
+                                        </div>
+                                        <div class="comment-actions">
+                                            <button class="comment-like">👍 38</button>
+                                            <button class="comment-dislike">👎 0</button>
+                                            <button class="comment-reply">Reply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-avatar" style="background-image: url('/placeholder.svg?height=50&width=50')"></div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <div class="comment-username">AnimeExpert</div>
+                                <div class="comment-time">1 week ago</div>
+                            </div>
+                            <div class="comment-text">
+                                The animation quality has really improved in the Wano arc. The fight scenes are spectacular now!
+                            </div>
+                            <div class="comment-actions">
+                                <button class="comment-like">👍 87</button>
+                                <button class="comment-dislike">👎 3</button>
+                                <button class="comment-reply">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-avatar" style="background-image: url('/placeholder.svg?height=50&width=50')"></div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <div class="comment-username">NewNakama</div>
+                                <div class="comment-time">3 days ago</div>
+                            </div>
+                            <div class="comment-text">
+                                I just started watching One Piece last month and I'm already on episode 200. This show is addictive!
+                            </div>
+                            <div class="comment-actions">
+                                <button class="comment-like">👍 56</button>
+                                <button class="comment-dislike">👎 1</button>
+                                <button class="comment-reply">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="load-more-container">
+                    <button class="load-more-btn" id="load-more-comments">Load More Comments</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Banner -->
+    <section class="premium-banner">
+        <div class="container">
+            <div class="premium-content">
+                <h3>AnimeCrunch Premium</h3>
+                <p>Watch ad-free, access all episodes, and enjoy new episodes one hour after Japan!</p>
+                <a href="#" class="btn btn-primary" id="premium-signup-btn">Try Free for 14 Days</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Browse</a></li>
+                        <li><a href="manga.html">Manga</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="store.html">Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">My Watchlist</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IG</a>
+                        <a href="#">YT</a>
+                    </div>
+                    <p>Download the App</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">App Store</a>
+                        <a href="#" class="app-button">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AnimeCrunch. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal">
+            <div class="modal-close" id="modal-close">✕</div>
+            <div class="modal-header">
+                <h2>Welcome to AnimeCrunch</h2>
+                <p>Your gateway to the world of anime and manga</p>
+            </div>
+            <div class="modal-tabs">
+                <div class="modal-tab active" id="login-tab">Login</div>
+                <div class="modal-tab" id="signup-tab">Sign Up</div>
+            </div>
+            <div class="modal-form active" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button class="form-submit">Log In</button>
+                <div class="form-footer">
+                    <p>Forgot your password? <a href="#">Reset it here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or login with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-form" id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-input" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-input" placeholder="Create a password">
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button class="form-submit">Sign Up</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="login-link">Log in here</a></p>
+                </div>
+                <div class="social-login">
+                    <div class="social-login-title">Or sign up with</div>
+                    <div class="social-login-buttons">
+                        <a href="#" class="social-login-btn facebook">f</a>
+                        <a href="#" class="social-login-btn google">G</a>
+                        <a href="#" class="social-login-btn twitter">t</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Search functionality
+        const searchToggle = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        const searchInput = document.querySelector('.search-input');
+        const searchResults = document.querySelector('.search-results');
+        
+        searchToggle.addEventListener('click', () => {
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+                searchBar.classList.remove('active');
+            }
+        });
+        
+        searchInput.addEventListener('input', () => {
+            if (searchInput.value.length > 0) {
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Login/Signup Modal
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const mobileLoginBtn = document.getElementById('mobile-login-btn');
+        const mobileSignupBtn = document.getElementById('mobile-signup-btn');
+        const premiumSignupBtn = document.getElementById('premium-signup-btn');
+        const modalOverlay = document.getElementById('login-modal');
+        const modalClose = document.getElementById('modal-close');
+        const loginTab = document.getElementById('login-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const loginLink = document.getElementById('login-link');
+        
+        function openModal(tab = 'login') {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            if (tab === 'signup') {
+                loginTab.classList.remove('active');
+                signupTab.classList.add('active');
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+            } else {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                loginForm.classList.add('active');
+                signupForm.classList.remove('active');
+            }
+        }
+        
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('login');
+        });
+        
+        signupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        mobileLoginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('login');
+            mobileMenuToggle.click(); // Close mobile menu
+        });
+        
+        mobileSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+            mobileMenuToggle.click(); // Close mobile menu
+        });
+        
+        premiumSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('signup');
+        });
+        
+        modalClose.addEventListener('click', closeModal);
+        
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('active');
+            signupTab.classList.remove('active');
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+        });
+        
+        signupTab.addEventListener('click', () => {
+            loginTab.classList.remove('active');
+            signupTab.classList.add('active');
+            loginForm.classList.remove('active');
+            signupForm.classList.add('active');
+        });
+        
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginTab.click();
+        });
+        
+        // Video Player Functionality
+        const watchNowBtn = document.getElementById('watch-now-btn');
+        const videoPlayerSection = document.getElementById('video-player-section');
+        const closeVideoBtn = document.getElementById('close-video-btn');
+        const videoPlayer = document.getElementById('video-player');
+        const mainVideo = document.getElementById('main-video');
+        const videoOverlay = document.getElementById('video-overlay');
+        const playButton = document.getElementById('play-button');
+        const episodeCards = document.querySelectorAll('.episode-card');
+        
+        // Function to show video player
+        function showVideoPlayer() {
+            videoPlayerSection.classList.add('active');
+            document.body.classList.add('video-playing');
+            
+            // Scroll to video player
+            videoPlayerSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Function to hide video player
+        function hideVideoPlayer() {
+            videoPlayerSection.classList.remove('active');
+            document.body.classList.remove('video-playing');
+            mainVideo.pause();
+        }
+        
+        // Watch Now button click
+        watchNowBtn.addEventListener('click', () => {
+            showVideoPlayer();
+        });
+        
+        // Close video button click
+        closeVideoBtn.addEventListener('click', () => {
+            hideVideoPlayer();
+        });
+        
+        // Play/Pause video on overlay click
+        videoOverlay.addEventListener('click', () => {
+            if (mainVideo.paused) {
+                mainVideo.play();
+                videoOverlay.classList.add('playing');
+            } else {
+                mainVideo.pause();
+                videoOverlay.classList.remove('playing');
+            }
+        });
+        
+        // Update overlay when video plays/pauses
+        mainVideo.addEventListener('play', () => {
+            videoOverlay.classList.add('playing');
+        });
+        
+        mainVideo.addEventListener('pause', () => {
+            videoOverlay.classList.remove('playing');
+        });
+        
+        // Episode card click
+        episodeCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const episodeNumber = card.getAttribute('data-episode');
+                const episodeTitle = card.querySelector('h4').textContent;
+                
+                // Update video title
+                document.getElementById('video-title').textContent = `One Piece - Episode ${episodeNumber}: ${episodeTitle}`;
+                
+                // In a real implementation, you would update the video source here
+                // mainVideo.src = `videos/one-piece-episode-${episodeNumber}.mp4`;
+                // mainVideo.load();
+                
+                showVideoPlayer();
+            });
+        });
+        
+        // Quality selector change
+        document.getElementById('quality-selector').addEventListener('change', function() {
+            // In a real implementation, you would change the video quality here
+            console.log(`Quality changed to: ${this.value}`);
+        });
+        
+        // Audio selector change
+        document.getElementById('audio-selector').addEventListener('change', function() {
+            // In a real implementation, you would change the audio track here
+            console.log(`Audio changed to: ${this.value}`);
+        });
+        
+        // Subtitle selector change
+        document.getElementById('subtitle-selector').addEventListener('change', function() {
+            // In a real implementation, you would change the subtitles here
+            console.log(`Subtitles changed to: ${this.value}`);
+        });
+        
+        // Load more episodes button
+        document.getElementById('load-more-episodes').addEventListener('click', function() {
+            // In a real implementation, you would load more episodes here
+            this.textContent = 'Loading...';
+            
+            setTimeout(() => {
+                this.textContent = 'No More Episodes';
+                this.disabled = true;
+            }, 1500);
+        });
+        
+        // Load more comments button
+        document.getElementById('load-more-comments').addEventListener('click', function() {
+            // In a real implementation, you would load more comments here
+            this.textContent = 'Loading...';
+            
+            setTimeout(() => {
+                this.textContent = 'No More Comments';
+                this.disabled = true;
+            }, 1500);
+        });
+        
+        // Comment like/dislike buttons
+        const commentLikeButtons = document.querySelectorAll('.comment-like');
+        const commentDislikeButtons = document.querySelectorAll('.comment-dislike');
+        
+        commentLikeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const currentCount = parseInt(this.textContent.split(' ')[1]);
+                this.textContent = `👍 ${currentCount + 1}`;
+                this.classList.add('active');
+            });
+        });
+        
+        commentDislikeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const currentCount = parseInt(this.textContent.split(' ')[1]);
+                this.textContent = `👎 ${currentCount + 1}`;
+                this.classList.add('active');
+            });
+        });
+        
+        // Comment form submission
+        const commentForm = document.querySelector('.comment-form');
+        const commentInput = document.querySelector('.comment-input');
+        const commentSubmit = document.querySelector('.comment-submit');
+        
+        commentSubmit.addEventListener('click', () => {
+            const commentText = commentInput.value.trim();
+            
+            if (commentText) {
+                // In a real implementation, you would submit the comment to a server
+                // For now, we'll just add it to the UI
+                const commentsList = document.querySelector('.comments-list');
+                
+                const newComment = document.createElement('div');
+                newComment.className = 'comment';
+                newComment.innerHTML = `
+                    <div class="comment-avatar" style="background-image: url('/placeholder.svg?height=50&width=50')"></div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <div class="comment-username">You</div>
+                            <div class="comment-time">Just now</div>
+                        </div>
+                        <div class="comment-text">
+                            ${commentText}
+                        </div>
+                        <div class="comment-actions">
+                            <button class="comment-like">👍 0</button>
+                            <button class="comment-dislike">👎 0</button>
+                            <button class="comment-reply">Reply</button>
+                        </div>
+                    </div>
+                `;
+                
+                commentsList.insertBefore(newComment, commentsList.firstChild);
+                commentInput.value = '';
+                
+                // Add event listeners to the new buttons
+                const newLikeButton = newComment.querySelector('.comment-like');
+                const newDislikeButton = newComment.querySelector('.comment-dislike');
+                
+                newLikeButton.addEventListener('click', function() {
+                    const currentCount = parseInt(this.textContent.split(' ')[1]);
+                    this.textContent = `👍 ${currentCount + 1}`;
+                    this.classList.add('active');
+                });
+                
+                newDislikeButton.addEventListener('click', function() {
+                    const currentCount = parseInt(this.textContent.split(' ')[1]);
+                    this.textContent = `👎 ${currentCount + 1}`;
+                    this.classList.add('active');
+                });
+            }
+        });
+        
+        // Initialize page based on URL parameters
+        function initializePageFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const contentType = urlParams.get('type') || 'anime';
+            const contentId = urlParams.get('id') || '1';
+            const contentTitle = urlParams.get('title') || 'One Piece';
+            
+            // Update breadcrumb
+            document.getElementById('content-type-link').textContent = contentType.charAt(0).toUpperCase() + contentType.slice(1);
+            document.getElementById('content-type-link').href = `${contentType}.html`;
+            document.getElementById('content-title').textContent = contentTitle;
+            
+            // Update page title
+            document.getElementById('detail-title').textContent = contentTitle;
+            document.title = `AnimeCrunch - ${contentTitle}`;
+            
+            // In a real implementation, you would fetch content details from a server
+            // For now, we'll just update the UI with the content title
+            
+            // If content type is not anime, hide episodes section
+            if (contentType !== 'anime') {
+                document.getElementById('episodes-section').style.display = 'none';
+            }
+        }
+        
+        // Call initialize function when page loads
+        window.addEventListener('load', initializePageFromURL);
+    </script>
+</body>
+</html>
