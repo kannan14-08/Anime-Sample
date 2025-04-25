@@ -2572,6 +2572,12 @@ footer::before {
   background-color: #333333;
   padding: 3px 8px;
   border-radius: 4px;
+  transition: color 0.5s,background-color 0.5s;
+  cursor: pointer;
+}
+.game-platform:hover{
+   background-color: red;
+   color: white;
 }
 
 .featured-game {

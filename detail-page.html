@@ -916,5 +916,263 @@
         // Call initialize function when page loads
         window.addEventListener('load', initializePageFromURL);
     </script>
+
+    <script>// This file contains fixes for the JavaScript issues in the detail-page.html file
+
+        // 1. Fix for the search functionality
+        // The issue is that searchResults is being shown/hidden based on input length,
+        // but there's no handling for clicking outside the search area to close it
+        
+        document.addEventListener("DOMContentLoaded", () => {
+          const searchToggle = document.getElementById("search-toggle")
+          const searchBar = document.getElementById("search-bar")
+          const searchInput = document.querySelector(".search-input")
+          const searchResults = document.querySelector(".search-results")
+        
+          // Initialize search results to be hidden
+          searchResults.style.display = "none"
+        
+          searchToggle.addEventListener("click", () => {
+            searchBar.classList.toggle("active")
+            if (searchBar.classList.contains("active")) {
+              searchInput.focus()
+            } else {
+              searchResults.style.display = "none"
+            }
+          })
+        
+          document.addEventListener("click", (e) => {
+            if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+              searchBar.classList.remove("active")
+              searchResults.style.display = "none"
+            }
+          })
+        
+          searchInput.addEventListener("input", () => {
+            if (searchInput.value.length > 0) {
+              searchResults.style.display = "block"
+            } else {
+              searchResults.style.display = "none"
+            }
+          })
+        
+          // Add click handlers for search results
+          const searchResultItems = document.querySelectorAll(".search-result-item")
+          searchResultItems.forEach((item) => {
+            item.addEventListener("click", () => {
+              const title = item.querySelector("h4").textContent
+              // Navigate to the detail page for the selected item
+              window.location.href = `detail-page.html?title=${encodeURIComponent(title)}`
+            })
+          })
+        })
+        
+        // 2. Fix for the video player functionality
+        // The issue is that the video overlay doesn't properly hide when the video is playing
+        
+        document.addEventListener("DOMContentLoaded", () => {
+          const watchNowBtn = document.getElementById("watch-now-btn")
+          const videoPlayerSection = document.getElementById("video-player-section")
+          const closeVideoBtn = document.getElementById("close-video-btn")
+          const videoPlayer = document.getElementById("video-player")
+          const mainVideo = document.getElementById("main-video")
+          const videoOverlay = document.getElementById("video-overlay")
+          const playButton = document.getElementById("play-button")
+          const episodeCards = document.querySelectorAll(".episode-card")
+        
+          // Function to show video player
+          function showVideoPlayer() {
+            videoPlayerSection.classList.add("active")
+            document.body.classList.add("video-playing")
+        
+            // Scroll to video player
+            videoPlayerSection.scrollIntoView({ behavior: "smooth" })
+          }
+        
+          // Function to hide video player
+          function hideVideoPlayer() {
+            videoPlayerSection.classList.remove("active")
+            document.body.classList.remove("video-playing")
+            mainVideo.pause()
+            videoOverlay.classList.remove("playing") // Reset overlay state
+          }
+        
+          // Watch Now button click
+          if (watchNowBtn) {
+            watchNowBtn.addEventListener("click", () => {
+              showVideoPlayer()
+            })
+          }
+        
+          // Close video button click
+          if (closeVideoBtn) {
+            closeVideoBtn.addEventListener("click", () => {
+              hideVideoPlayer()
+            })
+          }
+        
+          // Play/Pause video on overlay click
+          if (videoOverlay) {
+            videoOverlay.addEventListener("click", () => {
+              if (mainVideo.paused) {
+                mainVideo.play()
+                videoOverlay.classList.add("playing")
+              } else {
+                mainVideo.pause()
+                videoOverlay.classList.remove("playing")
+              }
+            })
+          }
+        
+          // Update overlay when video plays/pauses
+          if (mainVideo) {
+            mainVideo.addEventListener("play", () => {
+              videoOverlay.classList.add("playing")
+            })
+        
+            mainVideo.addEventListener("pause", () => {
+              videoOverlay.classList.remove("playing")
+            })
+        
+            // Add ended event to reset the overlay
+            mainVideo.addEventListener("ended", () => {
+              videoOverlay.classList.remove("playing")
+            })
+          }
+        
+          // Episode card click
+          episodeCards.forEach((card) => {
+            card.addEventListener("click", () => {
+              const episodeNumber = card.getAttribute("data-episode")
+              const episodeTitle = card.querySelector("h4").textContent
+        
+              // Update video title
+              document.getElementById("video-title").textContent = `One Piece - Episode ${episodeNumber}: ${episodeTitle}`
+        
+              // In a real implementation, you would update the video source here
+              // mainVideo.src = `videos/one-piece-episode-${episodeNumber}.mp4`;
+              // mainVideo.load();
+        
+              showVideoPlayer()
+            })
+          })
+        })
+        
+        // 3. Fix for the modal functionality
+        // The issue is that the modal doesn't properly handle tab switching
+        
+        document.addEventListener("DOMContentLoaded", () => {
+          const loginBtn = document.getElementById("login-btn")
+          const signupBtn = document.getElementById("signup-btn")
+          const mobileLoginBtn = document.getElementById("mobile-login-btn")
+          const mobileSignupBtn = document.getElementById("mobile-signup-btn")
+          const premiumSignupBtn = document.getElementById("premium-signup-btn")
+          const modalOverlay = document.getElementById("login-modal")
+          const modalClose = document.getElementById("modal-close")
+          const loginTab = document.getElementById("login-tab")
+          const signupTab = document.getElementById("signup-tab")
+          const loginForm = document.getElementById("login-form")
+          const signupForm = document.getElementById("signup-form")
+          const loginLink = document.getElementById("login-link")
+        
+          function openModal(tab = "login") {
+            modalOverlay.classList.add("active")
+            document.body.style.overflow = "hidden"
+        
+            if (tab === "signup") {
+              loginTab.classList.remove("active")
+              signupTab.classList.add("active")
+              loginForm.classList.remove("active")
+              signupForm.classList.add("active")
+            } else {
+              loginTab.classList.add("active")
+              signupTab.classList.remove("active")
+              loginForm.classList.add("active")
+              signupForm.classList.remove("active")
+            }
+          }
+        
+          function closeModal() {
+            modalOverlay.classList.remove("active")
+            document.body.style.overflow = ""
+          }
+        
+          if (loginBtn) {
+            loginBtn.addEventListener("click", (e) => {
+              e.preventDefault()
+              openModal("login")
+            })
+          }
+        
+          if (signupBtn) {
+            signupBtn.addEventListener("click", (e) => {
+              e.preventDefault()
+              openModal("signup")
+            })
+          }
+        
+          if (mobileLoginBtn) {
+            mobileLoginBtn.addEventListener("click", (e) => {
+              e.preventDefault()
+              openModal("login")
+              const mobileMenuToggle = document.getElementById("mobile-menu-toggle")
+              if (mobileMenuToggle) mobileMenuToggle.click() // Close mobile menu
+            })
+          }
+        
+          if (mobileSignupBtn) {
+            mobileSignupBtn.addEventListener("click", (e) => {
+              e.preventDefault()
+              openModal("signup")
+              const mobileMenuToggle = document.getElementById("mobile-menu-toggle")
+              if (mobileMenuToggle) mobileMenuToggle.click() // Close mobile menu
+            })
+          }
+        
+          if (premiumSignupBtn) {
+            premiumSignupBtn.addEventListener("click", (e) => {
+              e.preventDefault()
+              openModal("signup")
+            })
+          }
+        
+          if (modalClose) {
+            modalClose.addEventListener("click", closeModal)
+          }
+        
+          if (modalOverlay) {
+            modalOverlay.addEventListener("click", (e) => {
+              if (e.target === modalOverlay) {
+                closeModal()
+              }
+            })
+          }
+        
+          if (loginTab) {
+            loginTab.addEventListener("click", () => {
+              loginTab.classList.add("active")
+              signupTab.classList.remove("active")
+              loginForm.classList.add("active")
+              signupForm.classList.remove("active")
+            })
+          }
+        
+          if (signupTab) {
+            signupTab.addEventListener("click", () => {
+              loginTab.classList.remove("active")
+              signupTab.classList.add("active")
+              loginForm.classList.remove("active")
+              signupForm.classList.add("active")
+            })
+          }
+        
+          if (loginLink) {
+            loginLink.addEventListener("click", (e) => {
+              e.preventDefault()
+              loginTab.click()
+            })
+          }
+        })
+        </script>
 </body>
 </html>
